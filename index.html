@@ -1481,11 +1481,111 @@ header.top .hero-actions{z-index:6!important}
   }
 }
 
+
+
+/* RECOMPOSITION DU HERO — image panoramique Scania, profil sous le bandeau */
+header.top{
+  position:relative!important;
+  width:100vw!important;
+  min-width:100vw!important;
+  max-width:none!important;
+  height:clamp(300px,25vw,410px)!important;
+  min-height:300px!important;
+  max-height:410px!important;
+  margin-left:calc(50% - 50vw)!important;
+  margin-right:0!important;
+  padding:0!important;
+  overflow:hidden!important;
+  border-radius:0 0 22px 22px!important;
+  background:#03101d!important;
+}
+header.top > img.banner-image{
+  position:absolute!important;
+  inset:0!important;
+  display:block!important;
+  width:100%!important;
+  min-width:100%!important;
+  max-width:none!important;
+  height:100%!important;
+  min-height:100%!important;
+  margin:0!important;
+  object-fit:cover!important;
+  object-position:55% 50%!important;
+  transform:none!important;
+  filter:brightness(.94) saturate(1.08) contrast(1.04)!important;
+}
+header.top:after{
+  content:""!important;
+  position:absolute!important;
+  z-index:1!important;
+  inset:0!important;
+  pointer-events:none!important;
+  background:linear-gradient(180deg,#020b1466 0%,transparent 48%,#020b1480 100%)!important;
+}
+header.top .hero-brand{
+  position:absolute!important;
+  z-index:4!important;
+  left:50%!important;
+  right:auto!important;
+  top:clamp(18px,2vw,30px)!important;
+  transform:translateX(-50%)!important;
+  width:max-content!important;
+  max-width:90%!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  text-align:center!important;
+}
+header.top .hero-actions{
+  position:absolute!important;
+  z-index:6!important;
+  top:12px!important;
+  left:14px!important;
+  right:14px!important;
+  display:flex!important;
+  justify-content:space-between!important;
+  pointer-events:none!important;
+}
+header.top .hero-icon{pointer-events:auto!important}
+.profile-strip{
+  position:relative!important;
+  z-index:5!important;
+  margin:10px 0 8px!important;
+  padding:8px 5px!important;
+  background:transparent!important;
+  border:0!important;
+  box-shadow:none!important;
+}
+.avatar-truck{
+  background-image:none!important;
+  background-color:#09243a!important;
+}
+.avatar-truck svg{
+  display:block!important;
+  visibility:visible!important;
+  opacity:1!important;
+}
+@media(min-width:700px){
+  header.top{height:clamp(340px,24vw,430px)!important}
+  .profile-strip{margin:12px 0 10px!important}
+}
+@media(max-width:699px){
+  header.top{
+    height:clamp(235px,62vw,310px)!important;
+    min-height:235px!important;
+    max-height:310px!important;
+  }
+  header.top > img.banner-image{object-position:57% 50%!important}
+  header.top .hero-brand{top:22px!important}
+  header.top .hero-actions{top:10px!important;left:10px!important;right:10px!important}
+  .profile-strip{margin:8px 0 8px!important}
+}
+
 </style>
 </head>
 <body>
 <header class="top">
-<img class="banner-image" src="assets/3d/home-header-reference.webp" alt="Bandeau d’accueil MYTRUCK MATE"><div class="hero-brand"><svg class="brand-truck"><use href="assets/3d/mytruck-icons.svg#truck-logo"/></svg><strong>MYTRUCK <span>MATE</span></strong><small>Le compagnon du chauffeur</small></div><div class="hero-actions"><button class="hero-icon menu-hit" id="menuToggle" aria-label="Ouvrir le menu"></button><button class="hero-icon notification-hit" id="notificationsBtn" aria-label="Notifications"></button></div>
+<img class="banner-image" src="assets/3d/home-scania-hero.webp" alt="Bandeau d’accueil MYTRUCK MATE"><div class="hero-brand"><svg class="brand-truck"><use href="assets/3d/mytruck-icons.svg#truck-logo"/></svg><strong>MYTRUCK <span>MATE</span></strong><small>Le compagnon du chauffeur</small></div><div class="hero-actions"><button class="hero-icon menu-hit" id="menuToggle" aria-label="Ouvrir le menu"></button><button class="hero-icon notification-hit" id="notificationsBtn" aria-label="Notifications"></button></div>
 <div class="banner-greeting"></div>
 </header>
 
