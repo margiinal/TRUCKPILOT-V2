@@ -43,7 +43,7 @@ const defaultLists={plates:[],donors:[],clients:[],chassis:[],sizes:['20 D','20 
 const local=JSON.parse(localStorage.getItem('truckpilote_profile')||'{}');
 keys.forEach(k=>document.getElementById(k).value=local[k]||'');
 const status=document.getElementById('profileStatus');let user=null;
-let pendingAvatar=localStorage.getItem('truckpilote_profile_avatar_v1')||'';
+let pendingAvatar='';let avatarStorageKey='truckpilote_profile_avatar_v1';
 const photoInput=document.getElementById('profilePhotoInput');
 const photoImage=document.getElementById('profilePhotoImage');
 const photoFallback=document.getElementById('profilePhotoFallback');
@@ -69,6 +69,7 @@ document.getElementById('lastname').addEventListener('input',renderProfilePhoto)
 try{
  const {data,error}=await sb.auth.getUser();if(error)throw error;user=data.user;
  if(!user)throw new Error('Connecte-toi à ton compte depuis l’accueil pour configurer tes primes.');
+ avatarStorageKey='truckpilote_profile_avatar_v1::'+user.id;pendingAvatar=localStorage.getItem(avatarStorageKey)||'';renderProfilePhoto();
  // Le profil du compte connecté est prioritaire sur les anciennes données locales.
  const localMeta=(()=>{try{return JSON.parse(localStorage.getItem('truckpilote_profile_v2_metadata')||'{}')}catch{return {}}})();const metadata={...(user.user_metadata||{}),...localMeta};
  const accountName=String(metadata.full_name||'').trim();
@@ -83,7 +84,7 @@ try{
  status.textContent='Réglages du compte chargés ✓';
 }catch(e){status.textContent=e.message||'Connexion indisponible'}
 document.getElementById('form').addEventListener('submit',async e=>{
- e.preventDefault();const out={};keys.forEach(k=>out[k]=document.getElementById(k).value.trim());localStorage.setItem('truckpilote_profile',JSON.stringify(out));if(pendingAvatar)localStorage.setItem('truckpilote_profile_avatar_v1',pendingAvatar);else localStorage.removeItem('truckpilote_profile_avatar_v1');
+ e.preventDefault();const out={};keys.forEach(k=>out[k]=document.getElementById(k).value.trim());localStorage.setItem('truckpilote_profile',JSON.stringify(out));if(pendingAvatar)localStorage.setItem(avatarStorageKey,pendingAvatar);else localStorage.removeItem(avatarStorageKey);
  if(!user){status.textContent='Profil local enregistré. Connecte-toi pour sauvegarder les primes.';return}
  const custom_lists={};Object.entries(listFields).forEach(([field,key])=>{custom_lists[key]=document.getElementById(field).value.split(/\r?\n/).map(x=>x.trim()).filter(Boolean).filter((x,i,a)=>a.findIndex(y=>y.toLocaleLowerCase()===x.toLocaleLowerCase())===i)});
  const primes=[];for(let i=1;i<=3;i++){const name=document.getElementById('prime'+i+'Name').value.trim();const rate=Math.max(0,Number(document.getElementById('prime'+i+'Rate').value)||0);const emoji=document.getElementById('prime'+i+'Emoji').value.trim();primes.push({id:'prime'+i,name,emoji,rate,enabled:document.getElementById('prime'+i+'Enabled').checked&&!!name})}
