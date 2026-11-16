@@ -1273,11 +1273,50 @@ main.wrap{
   .shortcut>span:last-child{font-size:9px!important}
 }
 
+
+
+/* FINITION 2 — rendre le bandeau et l’avatar visibles, réduire le vide */
+header.top{
+  height:clamp(285px,25vw,330px)!important;
+  min-height:285px!important;
+  max-height:330px!important;
+}
+header.top .banner-image{
+  height:100%!important;
+  object-fit:cover!important;
+  object-position:center 48%!important;
+  filter:brightness(1.12) saturate(1.16) contrast(1.06)!important;
+}
+.profile-strip{margin-top:-82px!important}
+.avatar-truck{
+  background:linear-gradient(145deg,#135b83,#07192a)!important;
+  background-image:none!important;
+  border:2px solid #41c9ff!important;
+  box-shadow:0 0 16px #00aaff66!important;
+}
+.avatar-truck svg{
+  display:block!important;
+  width:39px!important;
+  height:39px!important;
+  opacity:1!important;
+  visibility:visible!important;
+  filter:drop-shadow(0 0 4px #a8eaff)!important;
+}
+@media(max-width:699px){
+  header.top{
+    height:clamp(230px,66vw,285px)!important;
+    min-height:230px!important;
+    max-height:285px!important;
+  }
+  header.top .banner-image{object-position:58% 48%!important}
+  .profile-strip{margin-top:-76px!important}
+}
+
 </style>
 </head>
 <body>
 <header class="top">
-<img class="banner-image" src="assets/3d/home-scania-hero.webp" alt="Bandeau d’accueil MYTRUCK MATE"><div class="hero-brand"><svg class="brand-truck"><use href="assets/3d/mytruck-icons.svg#truck-logo"/></svg><strong>MYTRUCK <span>MATE</span></strong><small>Le compagnon du chauffeur</small></div><div class="hero-actions"><button class="hero-icon menu-hit" id="menuToggle" aria-label="Ouvrir le menu"></button><button class="hero-icon notification-hit" id="notificationsBtn" aria-label="Notifications"></button></div>
+<img class="banner-image" src="assets/3d/home-header-reference.webp" alt="Bandeau d’accueil MYTRUCK MATE"><div class="hero-brand"><svg class="brand-truck"><use href="assets/3d/mytruck-icons.svg#truck-logo"/></svg><strong>MYTRUCK <span>MATE</span></strong><small>Le compagnon du chauffeur</small></div><div class="hero-actions"><button class="hero-icon menu-hit" id="menuToggle" aria-label="Ouvrir le menu"></button><button class="hero-icon notification-hit" id="notificationsBtn" aria-label="Notifications"></button></div>
 <div class="banner-greeting"></div>
 </header>
 
