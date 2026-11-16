@@ -23,6 +23,12 @@ a{color:inherit}
 .hero-controls{position:absolute;inset:12px 16px auto;z-index:7;display:flex;justify-content:space-between;align-items:center}
 .hero>.profile-strip{position:absolute;z-index:6;left:max(16px,calc((100% - var(--page))/2));bottom:12px;transform:none;width:264px;height:75px;min-height:75px;box-sizing:border-box;display:flex;align-items:center;gap:9px;margin:0;padding:7px 8px;border:0;border-radius:0;background:transparent;box-shadow:none;backdrop-filter:none;overflow:hidden}
 .hero>.profile-strip .profile-copy strong{color:#fff}.hero>.profile-strip .profile-copy small{color:#d8efff}
+.hero>.weather-module{position:absolute;z-index:6;right:max(16px,calc((100% - var(--page))/2));bottom:17px;display:flex;align-items:center;justify-content:center;gap:9px;min-width:154px;min-height:58px;margin:0;padding:7px 13px;border:1px solid #42caffaa;border-radius:15px;background:linear-gradient(110deg,#061a2dbb,#09263bb0);box-shadow:0 5px 16px #00101f55;backdrop-filter:blur(3px);color:#fff;text-align:left;cursor:pointer}
+.weather-module-icon{display:grid;place-items:center;width:34px;height:34px;flex:0 0 34px;font-size:27px;line-height:1;filter:drop-shadow(0 0 5px #ffc94c88)}
+.weather-module-data{display:flex;flex-direction:column;gap:3px;min-width:0}
+.weather-module-data strong{font-size:17px;font-weight:950;line-height:1;white-space:nowrap}
+.weather-module-data small{font-size:10px;font-weight:750;color:#e2f3ff;white-space:nowrap;max-width:105px;overflow:hidden;text-overflow:ellipsis}
+
 .hero-icon{width:42px;height:42px;display:grid;place-content:center;gap:4px;border:1px solid #36bff0;border-radius:50%;background:#041626c9;color:#fff;box-shadow:0 0 12px #00aaff30;cursor:pointer}
 .menu-hit span{display:block;width:17px;height:2px;border-radius:2px;background:#f5fbff}
 .notification-hit{position:relative}
@@ -117,6 +123,11 @@ a{color:inherit}
 
 /* Tablette et mobile */
 @media(max-width:760px){
+ .hero>.weather-module{right:12px;bottom:13px;min-width:128px;min-height:52px;padding:6px 9px;gap:6px}
+ .weather-module-icon{width:29px;height:29px;flex-basis:29px;font-size:23px}
+ .weather-module-data strong{font-size:15px}
+ .weather-module-data small{font-size:9px;max-width:88px}
+
  body{padding-bottom:82px}
  .hero{height:clamp(150px,40vw,210px);aspect-ratio:auto}
  .hero-background{object-fit:contain;object-position:center center;background:#061321}
