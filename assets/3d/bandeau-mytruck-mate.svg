@@ -46,7 +46,7 @@
 <!-- Brand plate, left side -->
 <path d="M48 48Q48 28 70 28H1040Q1070 28 1070 58V400Q1070 430 1040 430H70Q48 430 48 405Z" fill="#031321" opacity=".42" stroke="#2aaee0" stroke-opacity=".32" stroke-width="2"/>
 <path d="M76 52H950" stroke="#12caff" stroke-width="4" opacity=".8"/>
-<image x="110" y="120" width="132" height="132" xlink:href="../icon.svg"/>
+<image x="110" y="120" width="132" height="132" xlink:href="../../icon.svg"/>
 <text x="275" y="208" font-family="Arial, Helvetica, sans-serif" font-size="104" font-weight="900" font-style="italic" letter-spacing="-5" fill="#f5f8ff">MYTRUCK</text>
 <text x="760" y="208" font-family="Arial, Helvetica, sans-serif" font-size="104" font-weight="900" font-style="italic" letter-spacing="-5" fill="url(#orange)">MATE</text>
 <path d="M280 245H950" stroke="#ff9a27" stroke-width="6"/>
