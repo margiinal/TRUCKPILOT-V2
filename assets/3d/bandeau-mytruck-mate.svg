@@ -1,0 +1,56 @@
+<svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1920 480" role="img" aria-labelledby="title desc">
+<title id="title">MYTRUCK MATE — Le compagnon du chauffeur</title>
+<desc id="desc">Bandeau bleu nuit et orange avec le logo de l’application, un camion sur la route et un port en arrière-plan.</desc>
+<defs>
+ <linearGradient id="sky" x2="1" y2="1"><stop stop-color="#03101f"/><stop offset=".48" stop-color="#0b2941"/><stop offset=".78" stop-color="#ef6c24"/><stop offset="1" stop-color="#ffb34c"/></linearGradient>
+ <linearGradient id="road" x2="0" y2="1"><stop stop-color="#19364a"/><stop offset="1" stop-color="#020914"/></linearGradient>
+ <linearGradient id="truck" x2="1" y2="1"><stop stop-color="#e9f5ff"/><stop offset=".38" stop-color="#5f8ba8"/><stop offset="1" stop-color="#071c30"/></linearGradient>
+ <linearGradient id="orange" x2="1"><stop stop-color="#ffcc57"/><stop offset="1" stop-color="#ff7918"/></linearGradient>
+ <filter id="glow"><feGaussianBlur stdDeviation="8" result="b"/><feMerge><feMergeNode in="b"/><feMergeNode in="SourceGraphic"/></feMerge></filter>
+ <linearGradient id="shade" x2="1"><stop stop-color="#020b17" stop-opacity=".12"/><stop offset=".56" stop-color="#020b17" stop-opacity=".08"/><stop offset="1" stop-color="#020b17" stop-opacity=".35"/></linearGradient>
+</defs>
+<rect width="1920" height="480" fill="url(#sky)"/>
+<circle cx="1315" cy="274" r="88" fill="#ffb44b" opacity=".78" filter="url(#glow)"/>
+<circle cx="1315" cy="274" r="55" fill="#ffe4a0"/>
+<path d="M0 280 Q230 210 440 280 T880 260 T1320 270 T1920 230 V480 H0Z" fill="#071b2a" opacity=".8"/>
+<!-- Port silhouettes -->
+<g fill="none" stroke="#071522" stroke-width="10" opacity=".85">
+ <path d="M70 355V190h210v165M95 190l65-65 55 65M160 125v230M280 190l-45 35H90"/>
+ <path d="M350 365V225h170v140M375 225l55-54 55 54M430 171v194M520 225l-35 28H355"/>
+ <path d="M100 205h190M380 240h155"/>
+</g>
+<g fill="#ff9d34" opacity=".55"><rect x="92" y="300" width="72" height="44"/><rect x="171" y="278" width="84" height="66"/><rect x="367" y="310" width="66" height="34"/><rect x="440" y="286" width="74" height="58"/></g>
+<!-- Light trails -->
+<path d="M0 405 Q420 350 830 382 T1430 365 T1920 340" fill="none" stroke="#11caff" stroke-width="7" opacity=".65" filter="url(#glow)"/>
+<path d="M0 418 Q440 372 850 398 T1500 383 T1920 360" fill="none" stroke="#ff9b2e" stroke-width="4" opacity=".8"/>
+<!-- Road -->
+<path d="M0 390 Q700 350 1180 385 Q1560 405 1920 340 V480 H0Z" fill="url(#road)"/>
+<path d="M0 433 Q760 390 1220 424 T1920 386" fill="none" stroke="#16caff" stroke-width="5" opacity=".8"/>
+<path d="M0 466 Q700 424 1180 454 T1920 418" fill="none" stroke="#f8a33d" stroke-width="3" opacity=".65"/>
+<path d="M700 470l90-9 40 3-90 9m250-20 90-8 40 3-90 8" fill="none" stroke="#eaf8ff" stroke-width="7" opacity=".8"/>
+<!-- Main truck on right -->
+<g transform="translate(1410 68)">
+ <path d="M245 94h210l75 88v168H245Z" fill="#183c55" stroke="#7eb6d7" stroke-width="7"/>
+ <path d="M260 110h185v216H260Z" fill="#b5c8d2" opacity=".22"/>
+ <path d="M25 160q12-58 72-76l125-10q40 0 55 48l15 174H0Z" fill="url(#truck)" stroke="#b8e8ff" stroke-width="7"/>
+ <path d="M94 97l120-8q30 0 43 36l12 70H42l16-61q7-29 36-37Z" fill="#061c31" stroke="#35bdf4" stroke-width="6"/>
+ <path d="M50 201h250v79H28Z" fill="#102d45" stroke="#78b6d4" stroke-width="5"/>
+ <path d="M52 224h235M52 245h235M52 266h235" stroke="#507c99" stroke-width="7"/>
+ <path d="M22 278h285l-10 34H12Z" fill="#071521"/>
+ <path d="M13 291h52M270 291h34" stroke="#e8f8ff" stroke-width="12" filter="url(#glow)"/>
+ <path d="M290 178h42l30 36h-68Z" fill="#ffae38"/>
+ <path d="M0 308h530v22H0Z" fill="#071521"/>
+ <g fill="#030912" stroke="#7da6bb" stroke-width="6"><circle cx="86" cy="340" r="36"/><circle cx="86" cy="340" r="15" fill="#9db8c9"/><circle cx="265" cy="340" r="36"/><circle cx="265" cy="340" r="15" fill="#9db8c9"/><circle cx="420" cy="340" r="36"/><circle cx="420" cy="340" r="15" fill="#9db8c9"/></g>
+ <path d="M70 24h175" stroke="#17caff" stroke-width="8" stroke-linecap="round" filter="url(#glow)"/>
+</g>
+<!-- Brand plate, left side -->
+<path d="M48 48Q48 28 70 28H1040Q1070 28 1070 58V400Q1070 430 1040 430H70Q48 430 48 405Z" fill="#031321" opacity=".42" stroke="#2aaee0" stroke-opacity=".32" stroke-width="2"/>
+<path d="M76 52H950" stroke="#12caff" stroke-width="4" opacity=".8"/>
+<image x="110" y="120" width="132" height="132" xlink:href="../icon.svg"/>
+<text x="275" y="208" font-family="Arial, Helvetica, sans-serif" font-size="104" font-weight="900" font-style="italic" letter-spacing="-5" fill="#f5f8ff">MYTRUCK</text>
+<text x="760" y="208" font-family="Arial, Helvetica, sans-serif" font-size="104" font-weight="900" font-style="italic" letter-spacing="-5" fill="url(#orange)">MATE</text>
+<path d="M280 245H950" stroke="#ff9a27" stroke-width="6"/>
+<text x="282" y="310" font-family="Arial, Helvetica, sans-serif" font-size="46" font-weight="700" font-style="italic" letter-spacing="1" fill="#f5f9ff">Le compagnon du chauffeur</text>
+<text x="285" y="365" font-family="Arial, Helvetica, sans-serif" font-size="20" font-weight="700" letter-spacing="7" fill="#70dfff">ROUTE • ACTIVITÉ • SIMPLICITÉ</text>
+<rect width="1920" height="480" fill="url(#shade)"/>
+</svg>
