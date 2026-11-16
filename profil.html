@@ -55,7 +55,7 @@ try{
  if(metadata.lastname)document.getElementById('lastname').value=metadata.lastname;
  else if(nameParts.length>1)document.getElementById('lastname').value=nameParts.slice(-1)[0];
  if(user.email)document.getElementById('email').value=user.email;
- const primes=user.user_metadata?.custom_primes||[];const savedLists=user.user_metadata?.custom_lists||{};Object.entries(listFields).forEach(([field,key])=>{document.getElementById(field).value=(savedLists[key]||defaultLists[key]).join('\n')});
+ const localMeta=(()=>{try{return JSON.parse(localStorage.getItem('truckpilote_profile_v2_metadata')||'{}')}catch{return {}}})();const primes=localMeta.custom_primes||user.user_metadata?.custom_primes||[];const savedLists=localMeta.custom_lists||user.user_metadata?.custom_lists||{};Object.entries(listFields).forEach(([field,key])=>{document.getElementById(field).value=(savedLists[key]||defaultLists[key]).join('\n')});
  for(let i=0;i<3;i++){const x=primes[i]||{};document.getElementById('prime'+(i+1)+'Name').value=x.name||'';document.getElementById('prime'+(i+1)+'Emoji').value=x.emoji||'';document.getElementById('prime'+(i+1)+'Rate').value=x.rate??'';document.getElementById('prime'+(i+1)+'Enabled').checked=!!x.enabled}
  status.textContent='Réglages du compte chargés ✓';
 }catch(e){status.textContent=e.message||'Connexion indisponible'}
@@ -65,10 +65,10 @@ document.getElementById('form').addEventListener('submit',async e=>{
  const custom_lists={};Object.entries(listFields).forEach(([field,key])=>{custom_lists[key]=document.getElementById(field).value.split(/\r?\n/).map(x=>x.trim()).filter(Boolean).filter((x,i,a)=>a.findIndex(y=>y.toLocaleLowerCase()===x.toLocaleLowerCase())===i)});
  const primes=[];for(let i=1;i<=3;i++){const name=document.getElementById('prime'+i+'Name').value.trim();const rate=Math.max(0,Number(document.getElementById('prime'+i+'Rate').value)||0);const emoji=document.getElementById('prime'+i+'Emoji').value.trim();primes.push({id:'prime'+i,name,emoji,rate,enabled:document.getElementById('prime'+i+'Enabled').checked&&!!name})}
  status.textContent='Enregistrement…';const fullName=[out.firstname,out.lastname].filter(Boolean).join(' ').trim();
- const {error}=await sb.auth.updateUser({data:{
+ localStorage.setItem('truckpilote_profile_v2_metadata',JSON.stringify({
   firstname:out.firstname,lastname:out.lastname,full_name:fullName,
   custom_primes:primes,custom_lists
- }});
- status.textContent=error?'Erreur : '+error.message:'Profil, identité, listes et primes enregistrés sur ton compte ✓';
+ }));
+ status.textContent='Profil, identité, listes et primes enregistrés localement sur cette version de test ✓';
 });
 </script></body></html>
