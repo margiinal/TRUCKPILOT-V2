@@ -1,1 +1,18 @@
-{"name":"MYTRUCK MATE — Le compagnon du routier","short_name":"MYTRUCK MATE","lang":"fr-FR","start_url":"./index.html","scope":"./","display":"standalone","background_color":"#edf3f8","theme_color":"#102b46","icons":[{"src":"icon.svg","sizes":"any","type":"image/svg+xml","purpose":"any maskable"}]}
+{
+  "name": "MYTRUCK MATE — Le compagnon du routier",
+  "short_name": "MYTRUCK MATE",
+  "lang": "fr-FR",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#edf3f8",
+  "theme_color": "#102b46",
+  "icons": [
+    {
+      "src": "assets/icons/icone-app-512.webp",
+      "sizes": "512x512",
+      "type": "image/webp",
+      "purpose": "any maskable"
+    }
+  ]
+}
