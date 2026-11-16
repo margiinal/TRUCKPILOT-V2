@@ -204,8 +204,9 @@ async function sync(){try{const user=await getUser();const {data,error}=await su
 
 try{
  const {data:{user}}=await supabase.auth.getUser();
- window.setCustomPrimeConfig(user?.user_metadata?.custom_primes||[]);
- const lists=user?.user_metadata?.custom_lists||{};
+ const localMeta=(()=>{try{return JSON.parse(localStorage.getItem('truckpilote_profile_v2_metadata')||'{}')}catch{return {}}})();
+ window.setCustomPrimeConfig(localMeta.custom_primes||user?.user_metadata?.custom_primes||[]);
+ const lists=localMeta.custom_lists||user?.user_metadata?.custom_lists||{};
  const defaults={sizes:['20 D','20 HC','20 RE','20 OT','40 D','40 HC','40 RE','40 OT']};
  Object.entries({plates:'plates',donors:'donors',clients:'clients',chassis:'chassis',sizes:'sizes'}).forEach(([key,id])=>{
    const values=Array.isArray(lists[key])?lists[key]:(defaults[key]||[]);
