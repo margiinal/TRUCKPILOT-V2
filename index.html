@@ -740,12 +740,197 @@ body{min-height:100vh;background:#030d18!important;padding-bottom:84px!important
 @media(min-width:601px){.top{height:clamp(320px,38vw,430px)!important;border-radius:0 0 26px 26px!important}.wrap{padding:16px 22px 28px!important}.home-view{display:grid!important;grid-template-columns:1fr 1fr!important;gap:13px!important}.profile-strip,.action-day,.shortcut-grid{grid-column:1/-1!important}.profile-strip{padding:5px 3px 10px!important}.action-day{min-height:88px!important}.info-card{min-height:112px!important}.shortcut{min-height:82px!important;font-size:12px!important}}
 @media(max-width:370px){.wrap{padding-left:10px!important;padding-right:10px!important}.home-view{gap:8px!important}.profile-strip{gap:8px!important}.avatar-truck{width:48px!important;height:48px!important;flex-basis:48px!important}.status-pill{flex-basis:64px!important}.info-card{padding:9px 10px!important}.card-head{font-size:12px!important}.prime-line{margin-left:44px!important}.shortcut{font-size:9px!important}}
 
+
+/* ACCUEIL — reproduction fidèle de la maquette fournie */
+.top{
+  position:relative;isolation:isolate;overflow:hidden;
+  width:min(100%,520px);margin:0 auto;padding:0;
+  height:auto;line-height:0;border:0;border-radius:0;
+  background:#06111d;box-shadow:none;
+}
+.top .banner-image{
+  display:block;width:100%;height:auto;max-width:none;
+  aspect-ratio:329/210;object-fit:cover;object-position:center;
+}
+.top .hero-brand,.top .banner-greeting{display:none!important}
+.top .hero-actions{position:absolute;inset:0;display:block;pointer-events:none}
+.top .hero-icon{
+  position:absolute;top:5%;width:46px;height:46px;padding:0;
+  opacity:0;pointer-events:auto;border:0;background:transparent;
+  color:transparent;box-shadow:none;border-radius:50%;cursor:pointer;
+}
+.top #menuToggle{left:3%}
+.top #notificationsBtn{right:3%}
+.wrap{
+  width:100%;max-width:920px;margin:0 auto;
+  padding:0 14px calc(84px + env(safe-area-inset-bottom));
+}
+#appSection{width:100%}
+.home-view{
+  width:100%;display:flex;flex-direction:column;gap:10px;
+  margin:0 auto;padding:0;
+}
+.profile-strip{
+  display:flex;align-items:center;gap:10px;min-height:62px;
+  margin:0;padding:0 3px;background:transparent;border:0;
+  box-shadow:none;border-radius:0;
+}
+.avatar-truck{
+  flex:0 0 54px;width:54px;height:54px;border-radius:50%;
+  overflow:hidden;border:2px solid #26c9ff;
+  background-image:url('assets/3d/home-scania-hero.webp');
+  background-size:auto 100%;background-position:78% center;
+  box-shadow:0 0 12px #00aaff55;
+}
+.avatar-truck svg{display:none}
+.profile-copy{min-width:0;flex:1;line-height:1.2}
+.profile-copy strong{display:block;font-size:16px;font-weight:850;color:#f7fbff;white-space:nowrap}
+.profile-copy small{display:flex;align-items:center;gap:5px;margin-top:5px;font-size:11px;color:#d6e6f3}
+.profile-copy .mini-truck{width:17px;height:14px;flex:none}
+.status-pill{
+  flex:0 0 70px;min-height:62px;padding:7px 5px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:3px;
+  border:1px solid #078fc9;border-radius:16px;
+  background:linear-gradient(145deg,#102d45,#06182a);
+  box-shadow:inset 0 1px 0 #ffffff16,0 0 12px #008cff22;
+  color:#f4faff;text-align:center;
+}
+.status-pill svg{width:21px;height:18px}
+.status-pill span{font-size:10px;line-height:1.15;font-weight:650}
+.action-day{
+  min-height:76px;width:100%;margin:2px 0 0;padding:11px 16px;
+  display:flex;align-items:center;gap:14px;
+  border:1px solid #23bfff;border-radius:23px;
+  background:linear-gradient(110deg,#00aaff 0%,#0874c7 48%,#073b79 100%);
+  box-shadow:inset 0 1px 0 #ffffff6b,0 0 9px #00bfff,0 0 22px #008cff77;
+  color:#fff;text-decoration:none;
+}
+.action-day .action-symbol{width:50px;height:50px;flex:none;display:grid;place-items:center}
+.action-day .action-symbol svg{width:43px;height:43px;filter:drop-shadow(0 0 4px #b9efff)}
+.action-day>span:nth-child(2){flex:1;min-width:0}
+.action-day strong{display:block;font-size:22px;line-height:1.1;font-weight:900}
+.action-day small{display:block;margin-top:4px;font-size:13px;color:#e5f5ff}
+.action-day .chev{
+  flex:0 0 29px;width:29px;height:29px;display:grid;place-items:center;
+  border-radius:50%;background:#ffffff35;color:#fff;font-size:26px;line-height:1;
+}
+.info-card{
+  position:relative;width:100%;min-height:70px;margin:0;padding:10px 13px 9px 14px;
+  overflow:hidden;border:1px solid #008fd0;border-radius:20px;
+  background:linear-gradient(110deg,#102c42 0%,#071b2b 100%);
+  box-shadow:inset 0 1px 0 #ffffff18,0 5px 12px #0005;
+  color:#f6fbff;
+}
+.info-card:before{
+  content:"";position:absolute;left:0;top:0;bottom:0;width:4px;
+  background:linear-gradient(180deg,#ffd34c,#ff9a00,#ffd34c);
+  box-shadow:0 0 10px #ffae00;
+}
+.card-head{
+  display:flex;align-items:center;gap:9px;min-height:24px;
+  font-size:14px;font-weight:850;line-height:1.15;
+}
+.card-head .symbol{width:34px;height:34px;flex:none;display:grid;place-items:center}
+.card-head .symbol svg{width:32px;height:32px;filter:drop-shadow(0 0 4px #ffb40055)}
+.card-arrow{
+  flex:none;width:28px;height:28px;margin-left:auto;border:0;border-radius:50%;
+  background:#ffffff24;color:#fff;font-size:24px;line-height:1;cursor:pointer;
+}
+.prime-line{display:flex;align-items:center;justify-content:space-between;padding:1px 34px 0 43px}
+.prime-total{font-size:25px;font-weight:950;letter-spacing:.2px;white-space:nowrap}
+.prime-month{font-size:11px;color:#d7e8f5;font-weight:600}
+#homePrimeDays{display:none}
+#homeActivityCard{padding-bottom:10px}
+#homeActivityCard .card-head .symbol svg{filter:drop-shadow(0 0 4px #66caff66)}
+.activity-grid{
+  display:grid;grid-template-columns:repeat(3,minmax(0,1fr));
+  margin:8px 0 0;padding:0;
+}
+.activity-item{
+  min-width:0;display:flex;flex-direction:column;align-items:center;justify-content:center;
+  padding:0 4px;text-align:center;
+}
+.activity-item+.activity-item{border-left:1px solid #4d7894}
+.activity-icon{height:30px;display:grid;place-items:center}
+.activity-icon svg{width:28px;height:28px;filter:drop-shadow(0 0 3px #65caff55)}
+.activity-value{margin-top:1px;font-size:16px;font-weight:900;color:#fff}
+.activity-label{margin-top:2px;font-size:10px;color:#d2e2ee}
+.shortcut-grid{
+  display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:7px;
+  margin:0;padding:0;
+}
+.shortcut{
+  min-width:0;min-height:66px;padding:8px 3px;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;
+  border:1px solid #087fb5;border-radius:16px;
+  background:linear-gradient(145deg,#12334d,#071b2b);
+  box-shadow:inset 0 1px 0 #ffffff18,0 4px 10px #0004;
+  color:#f3f9ff;text-decoration:none;text-align:center;
+}
+.shortcut .ico{width:28px;height:27px;display:grid;place-items:center}
+.shortcut .ico svg{width:25px;height:25px}
+.shortcut>span:last-child{font-size:10px;font-weight:750;white-space:nowrap}
+.customize-row{display:none!important}
+.custom-panel{display:none!important}
+.bottom-nav{
+  position:fixed!important;z-index:50;left:50%!important;right:auto!important;
+  bottom:0!important;transform:translateX(-50%);
+  width:min(100%,520px)!important;max-width:520px!important;
+  min-height:70px;padding:8px 8px calc(8px + env(safe-area-inset-bottom))!important;
+  display:grid!important;grid-template-columns:repeat(4,1fr);gap:2px;
+  border:1px solid #075c87!important;border-bottom:0!important;
+  border-radius:19px 19px 0 0!important;
+  background:linear-gradient(180deg,#071c2cfa,#020d17 90%)!important;
+  box-shadow:0 -5px 18px #0008,0 0 14px #008cff22!important;
+}
+.bottom-nav a{display:flex!important;flex-direction:column;align-items:center;justify-content:center;gap:3px;color:#d3e2ed!important;text-decoration:none;font-size:10px;font-weight:650}
+.bottom-nav a>span:first-child{width:27px;height:25px;display:grid;place-items:center}
+.bottom-nav a svg{width:23px;height:23px}
+.bottom-nav a.active{color:#00d9ff!important;text-shadow:0 0 9px #00cfff}
+.bottom-nav a.active>span:first-child{filter:drop-shadow(0 0 7px #00cfff)}
+@media(min-width:960px){
+ .top{width:min(100%,1120px);max-width:1120px;border-radius:0 0 22px 22px}
+ .top .banner-image{aspect-ratio:3.17/1;object-fit:cover;object-position:center}
+ .top .hero-brand{display:flex!important;position:absolute;left:50%;top:8%;transform:translateX(-50%);align-items:center;flex-direction:column;gap:3px;color:#fff;line-height:1;text-shadow:0 2px 8px #001}
+ .top .brand-truck{display:block;width:88px;height:46px;filter:drop-shadow(0 0 4px #bceaff)}
+ .top .hero-brand strong{font-size:clamp(24px,3vw,38px);font-style:italic;font-weight:950;color:#ff9b00;white-space:nowrap}
+ .top .hero-brand strong span{color:#fff}
+ .top .hero-brand small{font-size:13px;font-weight:700;color:#eaf6ff}
+ .top .hero-actions{pointer-events:none}
+ .top .hero-icon{opacity:1;pointer-events:auto;width:44px;height:44px;top:12%;background:#061a2bba;border:1px solid #35c8ff;color:#fff}
+ .top #menuToggle{left:3%}
+ .top #notificationsBtn{right:3%}
+ .wrap{padding-top:14px}
+ .home-view{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+ .profile-strip,.action-day,.shortcut-grid{grid-column:1/-1}
+ .profile-strip{max-width:650px;margin:0 auto;width:100%}
+ .action-day{max-width:100%}
+ .info-card{min-height:105px}
+ .bottom-nav{width:min(100%,520px)!important}
+}
+@media(max-width:959px){
+ body{padding-bottom:calc(78px + env(safe-area-inset-bottom))}
+ .top{width:min(100%,520px);margin:0 auto}
+ .wrap{max-width:520px;padding:0 14px calc(84px + env(safe-area-inset-bottom))}
+ .home-view{display:flex;flex-direction:column;gap:10px}
+ .profile-strip{margin-top:0}
+ .info-card{width:100%}
+}
+@media(max-width:390px){
+ .wrap{padding-left:10px;padding-right:10px}
+ .action-day{min-height:72px;padding:9px 12px;gap:10px}
+ .action-day strong{font-size:20px}
+ .prime-total{font-size:23px}
+ .card-head{font-size:13px}
+ .shortcut-grid{gap:5px}
+ .shortcut>span:last-child{font-size:9px}
+}
+
 </style>
 </head>
 <body>
 <header class="top">
-<img class="banner-image" src="mytruck_mate_header.jpg" alt="Camion MYTRUCK MATE au coucher du soleil"><div class="hero-brand"><svg class="brand-truck"><use href="assets/3d/mytruck-icons.svg#truck-logo"/></svg><strong>MYTRUCK <span>MATE</span></strong><small>Le compagnon du chauffeur</small></div>
-<div class="hero-actions"><button class="hero-icon" id="menuToggle" aria-label="Ouvrir le menu">☰</button><button class="hero-icon" id="notificationsBtn" aria-label="Notifications">🔔</button></div>
+<img class="banner-image" src="assets/3d/home-header-reference.webp" alt="Bandeau d’accueil MYTRUCK MATE"><div class="hero-actions"><button class="hero-icon menu-hit" id="menuToggle" aria-label="Ouvrir le menu"></button><button class="hero-icon notification-hit" id="notificationsBtn" aria-label="Notifications"></button></div>
 <div class="banner-greeting"></div>
 </header>
 
