@@ -1,4 +1,4 @@
-const CACHE = 'mytruck-mate-v2-v2';
+const CACHE = 'mytruck-mate-v2-v3';
 const APP_FILES = [
  './','./index.html','./mytruck_mate_header.jpg','./icon.svg','./manifest.json',
  './ma_journee.html','./detail_journee.html','./feuille.html','./frais.html',
