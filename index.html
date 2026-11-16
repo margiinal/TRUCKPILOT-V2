@@ -926,11 +926,18 @@ body{min-height:100vh;background:#030d18!important;padding-bottom:84px!important
  .shortcut>span:last-child{font-size:9px}
 }
 
+
+@media(min-width:960px){
+ .top .hero-icon:before{content:"";display:block;position:absolute;left:13px;top:14px;width:17px;height:14px;border-top:2px solid #eaf8ff;border-bottom:2px solid #eaf8ff;background:linear-gradient(#eaf8ff,#eaf8ff) center/17px 2px no-repeat}
+ .top #notificationsBtn:before{left:14px;top:11px;width:13px;height:17px;border:2px solid #eaf8ff;border-radius:9px 9px 5px 5px;border-bottom:0;background:transparent}
+ .top #notificationsBtn:after{content:"";position:absolute;left:17px;top:29px;width:9px;height:3px;border-radius:0 0 6px 6px;background:#eaf8ff;box-shadow:4px 4px 0 -1px #ff3434}
+}
+
 </style>
 </head>
 <body>
 <header class="top">
-<img class="banner-image" src="assets/3d/home-header-reference.webp" alt="Bandeau d’accueil MYTRUCK MATE"><div class="hero-actions"><button class="hero-icon menu-hit" id="menuToggle" aria-label="Ouvrir le menu"></button><button class="hero-icon notification-hit" id="notificationsBtn" aria-label="Notifications"></button></div>
+<img class="banner-image" src="assets/3d/home-header-reference.webp" alt="Bandeau d’accueil MYTRUCK MATE"><div class="hero-brand"><svg class="brand-truck"><use href="assets/3d/mytruck-icons.svg#truck-logo"/></svg><strong>MYTRUCK <span>MATE</span></strong><small>Le compagnon du chauffeur</small></div><div class="hero-actions"><button class="hero-icon menu-hit" id="menuToggle" aria-label="Ouvrir le menu"></button><button class="hero-icon notification-hit" id="notificationsBtn" aria-label="Notifications"></button></div>
 <div class="banner-greeting"></div>
 </header>
 
