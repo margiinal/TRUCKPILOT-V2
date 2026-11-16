@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover"><meta name="theme-color" content="#061626"><title>MY TRUCK MATE — Détail de la journée</title>
+<style>
+:root{font-family:Arial,Helvetica,sans-serif;color:#111;background:#07111a}
+*{box-sizing:border-box}
+body{margin:0;padding:14px;background:radial-gradient(ellipse at top,#193449,#07111a 65%);color:#f5f7f8;font:14px Arial,Helvetica,sans-serif}
+main{width:min(100%,760px);margin:0 auto;padding:14px;background:#07111a;border:1px solid #263e50;border-radius:18px;box-shadow:0 12px 35px #0008}
+nav{display:flex;align-items:center;gap:8px;height:30px;padding:0 4px 8px;color:#a9c7d8;font-size:13px;font-weight:700}
+nav a{color:#48d5ff;text-decoration:none}.crumb{color:#fff}
+.hero{display:grid;grid-template-columns:88px 1fr 88px;align-items:center;gap:12px;padding:9px 14px 12px;margin-bottom:10px;background:#fff;color:#111;border-radius:9px;border-bottom:4px solid #151515;text-align:center}
+.hero strong{display:block;font-size:clamp(22px,4vw,32px);font-weight:950;font-style:italic;letter-spacing:-1px;line-height:1.05}
+.hero small{display:inline-block;margin-top:5px;padding:5px 22px;border-radius:6px;background:#111;color:#fff;font-weight:800;font-size:12px;letter-spacing:.8px}
+.truck-art{width:82px;height:44px;fill:#111}
+.date{display:flex;align-items:center;gap:12px;padding:10px 16px;margin:0 0 8px;background:linear-gradient(90deg,#111,#4b4b4b);border-radius:6px;color:#fff;font-size:18px;font-weight:900}
+.date svg{width:24px;height:24px;flex:none}
+.identity{display:grid;grid-template-columns:1fr 1fr;gap:10px;padding:10px 14px;margin-bottom:8px;background:#fff;color:#111;border:1px solid #a3a3a3;border-radius:7px;font-size:13px;font-weight:700}
+.identity span{display:flex;align-items:center;gap:8px;min-width:0}.identity svg{width:20px;height:20px;flex:none}.identity b{overflow-wrap:anywhere}
+.section{margin:8px 0 10px;border:1px solid #888;border-radius:7px;background:#fff;color:#111;overflow:hidden}
+.heading{display:flex;align-items:center;gap:10px;padding:6px 12px;background:linear-gradient(90deg,#111,#555);color:#fff;font-weight:900;font-size:16px}
+.heading svg{width:20px;height:20px;flex:none}
+.metrics{display:grid;gap:0;padding:0}.four{grid-template-columns:repeat(4,minmax(0,1fr))}.three{grid-template-columns:repeat(3,minmax(0,1fr))}
+.metric{min-width:0;text-align:center;padding:7px 4px 8px;background:#fff;border-right:1px solid #777}
+.metric:last-child{border-right:0}
+.metric label{display:block;font-size:12px;font-weight:800;color:#222;white-space:normal}
+.metric strong{display:block;margin-top:3px;font-size:19px;font-weight:900;white-space:nowrap;color:#000}
+.transport{margin:7px 8px 9px;border:1px solid #555;border-radius:5px;overflow:hidden;background:#fff;color:#111;break-inside:avoid}
+.transport-title{padding:5px 10px;background:#dedede;border-bottom:1px solid #777;font-weight:900;font-size:14px}
+.transport-grid{display:grid;grid-template-columns:1fr 1fr}
+.transport-line{display:flex;gap:5px;align-items:baseline;min-width:0;padding:5px 9px;border-bottom:1px solid #aaa;font-size:12px;line-height:1.2;overflow-wrap:anywhere}
+.transport-line:nth-child(odd){border-right:1px solid #aaa}
+.transport-line:nth-last-child(-n+2){border-bottom:0}
+.transport-line svg{display:none}
+.transport-line b{font-weight:900}
+.fees{display:grid;grid-template-columns:repeat(5,minmax(0,1fr));gap:0}
+.fee{padding:7px 3px;text-align:center;background:#fff;color:#111;border-right:1px solid #777}
+.fee:last-child{border-right:0}
+.fee svg{display:none}
+.fee label{display:block;font-size:12px;font-weight:900}
+.fee b{display:block;margin-top:4px;font-size:14px;font-weight:900}
+.fee.yes b{color:#111}
+.actions{display:flex;gap:9px;padding:4px 2px 0}
+.print{flex:1;border:0;border-radius:8px;background:linear-gradient(#63e5ff,#079fd4);color:#00283b;font-weight:950;font-size:15px;padding:12px;cursor:pointer}
+.more{width:46px;border:1px solid #247da1;border-radius:8px;background:#031c2d;color:#a9eaff;font-size:20px;cursor:pointer}
+.empty{color:#111;text-align:center;padding:28px 15px;background:#fff;border-radius:8px}.empty a{color:#087aa3}
+@media(max-width:520px){body{padding:5px}main{padding:8px;border-radius:12px}.hero{grid-template-columns:54px 1fr 54px;padding:8px 6px}.truck-art{width:52px;height:34px}.identity{grid-template-columns:1fr}.date{font-size:16px}.metric label{font-size:10px}.metric strong{font-size:15px}.transport-line{font-size:10px;padding:5px}.fee label{font-size:9px}.fee b{font-size:12px}}
+@page{size:A4 portrait;margin:7mm}
+@media print{
+*{box-sizing:border-box!important;-webkit-print-color-adjust:exact!important;print-color-adjust:exact!important}
+html,body{margin:0!important;padding:0!important;width:100%!important;min-height:0!important;background:#fff!important;color:#000!important;font-family:Arial,Helvetica,sans-serif!important}
+body{font-size:8pt!important}
+main{width:100%!important;max-width:none!important;margin:0!important;padding:0!important;border:0!important;border-radius:0!important;background:#fff!important;color:#000!important;box-shadow:none!important}
+nav,.actions{display:none!important}
+.hero{grid-template-columns:30mm 1fr 30mm!important;gap:4mm!important;align-items:center!important;padding:2mm 3mm 3mm!important;margin:0 0 2mm!important;background:#fff!important;color:#000!important;border-radius:0!important;border-bottom:1.5mm solid #111!important}
+.truck-art{width:27mm!important;height:16mm!important;fill:#111!important}
+.hero strong{font-size:23pt!important;letter-spacing:-.7px!important;color:#000!important;font-weight:950!important}
+.hero small{margin-top:1.5mm!important;padding:1.5mm 10mm!important;background:#111!important;color:#fff!important;font-size:8.5pt!important;letter-spacing:1px!important}
+.date{margin:0 0 2mm!important;padding:2mm 3mm!important;border-radius:1mm!important;background:#292929!important;color:#fff!important;font-size:12pt!important}
+.date svg{width:5mm!important;height:5mm!important}
+.identity{grid-template-columns:1fr 1fr!important;gap:2mm!important;margin:0 0 2mm!important;padding:2mm 3mm!important;border:1px solid #333!important;border-radius:1mm!important;background:#fff!important;color:#000!important;font-size:8pt!important}
+.identity span{color:#000!important}.identity svg{width:4mm!important;height:4mm!important;fill:#111!important}
+.identity .driver{grid-column:1/-1;padding-bottom:2mm!important;margin-bottom:1mm!important;border-bottom:1px solid #777!important}
+.section{margin:0 0 2mm!important;border:1px solid #444!important;border-radius:1mm!important;background:#fff!important;color:#000!important;overflow:visible!important;break-inside:avoid!important;page-break-inside:avoid!important}
+.heading{padding:1.4mm 2.5mm!important;background:#292929!important;color:#fff!important;font-size:9pt!important}
+.heading svg{width:4.5mm!important;height:4.5mm!important}
+.metrics{gap:0!important;padding:0!important}
+.metric{padding:1.5mm 1mm!important;background:#fff!important;border-right:1px solid #777!important}
+.metric label{font-size:7.5pt!important;color:#000!important}
+.metric strong{font-size:12pt!important;color:#000!important;margin-top:1mm!important}
+.transport{margin:1.5mm 2mm 2mm!important;border:1px solid #555!important;border-radius:1mm!important;break-inside:avoid!important;page-break-inside:avoid!important}
+.transport-title{padding:1.2mm 2mm!important;background:#dedede!important;color:#000!important;font-size:8.5pt!important}
+.transport-grid{grid-template-columns:1fr 1fr!important}
+.transport-line{padding:1.1mm 2mm!important;font-size:7.4pt!important;line-height:1.15!important;color:#000!important;border-bottom:1px solid #aaa!important}
+.transport-line b{color:#000!important}
+.fees{grid-template-columns:repeat(5,minmax(0,1fr))!important}
+.fee{padding:1.5mm 1mm!important;background:#fff!important;color:#000!important}
+.fee label{font-size:7.5pt!important;color:#000!important}
+.fee b{font-size:9pt!important;color:#000!important;margin-top:1mm!important}
+.empty{background:#fff!important;color:#000!important}
+/* Mise en page A4 : meilleure occupation de la feuille */
+#content{display:flex!important;flex-direction:column!important;justify-content:space-between!important;min-height:250mm!important;gap:3mm!important}
+.date{padding:3mm 4mm!important;margin-bottom:0!important;font-size:13pt!important;min-height:13mm!important}
+.identity{padding:3mm 4mm!important;margin-bottom:0!important;min-height:13mm!important;font-size:9pt!important}
+.section{margin:0!important}
+.heading{padding:2.2mm 3mm!important;font-size:10pt!important;min-height:9mm!important}
+.heading svg{width:5mm!important;height:5mm!important}
+.metric{padding:3mm 1.5mm!important;min-height:17mm!important}
+.metric label{font-size:8.5pt!important}
+.metric strong{font-size:14pt!important;margin-top:1.5mm!important}
+.transport{margin:2mm 2.5mm 2.5mm!important}
+.transport-title{padding:1.8mm 2.5mm!important;font-size:9pt!important}
+.transport-line{padding:1.8mm 2.5mm!important;font-size:8.2pt!important;line-height:1.25!important}
+.fee{padding:2.5mm 1.5mm!important}
+.fee label{font-size:8.2pt!important}
+.fee b{font-size:10pt!important;margin-top:1.5mm!important}
+.fee b{font-size:17pt!important;line-height:1!important;font-weight:900!important}
+.fee.yes b{color:#000!important}
+.fee.no b{color:#555!important}
+/* Séparateurs verticaux robustes : trait à gauche de chaque colonne sauf la première */
+.metrics .metric{border-right:0!important;border-left:1px solid #777!important}
+.metrics .metric:first-child{border-left:0!important}
+.fees .fee{border-right:0!important;border-left:1px solid #777!important}
+.fees .fee:first-child{border-left:0!important}
+}</style></head><body><main>
+<nav><a class="back" href="index.html">←</a><a href="historique.html">Historique</a><span>›</span><span class="crumb">Détail de la journée</span></nav>
+<header class="hero"><svg class="truck-art" viewBox="0 0 120 60" aria-hidden="true"><path d="M4 39h6l8-13 22-10 18 1 12 13h8v14H4zM76 22h24l13 12v10H76zM83 25v9h25l-9-9z"/><circle cx="29" cy="45" r="8"/><circle cx="29" cy="45" r="4" fill="#fff"/><circle cx="91" cy="45" r="8"/><circle cx="91" cy="45" r="4" fill="#fff"/><path d="M5 49h111v3H5z"/></svg><div><strong>MY TRUCK MATE</strong><small>FICHE JOURNALIÈRE</small></div><svg class="truck-art" viewBox="0 0 120 60" aria-hidden="true"><path d="M4 39h6l8-13 22-10 18 1 12 13h8v14H4zM76 22h24l13 12v10H76zM83 25v9h25l-9-9z"/><circle cx="29" cy="45" r="8"/><circle cx="29" cy="45" r="4" fill="#fff"/><circle cx="91" cy="45" r="8"/><circle cx="91" cy="45" r="4" fill="#fff"/><path d="M5 49h111v3H5z"/></svg></header>
+<div id="content"><div class="empty">Chargement de la journée…</div></div>
+</main>
+<script>
+const KEY='truckpilote_daily_entries_v1';const $=id=>document.getElementById(id);
+const icons={calendar:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M7 3v4M17 3v4M3 10h18"/></svg>',clock:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M12 6v6l4 2"/></svg>',km:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="M6 12h12M9 9l-3 3 3 3M15 9l3 3-3 3"/></svg>',truck:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 5h13v12H2zM15 9h4l3 4v4h-7z"/><circle cx="6" cy="19" r="2"/><circle cx="18" cy="19" r="2"/></svg>',user:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="4"/><path d="M4 21c0-5 3-7 8-7s8 2 8 7"/></svg>',box:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 7h16v14H4zM4 7l8-4 8 4M12 3v18"/></svg>',lock:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect x="4" y="10" width="16" height="11" rx="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3"/></svg>',layers:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m12 3 9 5-9 5-9-5 9-5ZM3 12l9 5 9-5M3 16l9 5 9-5"/></svg>',fork:'<svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 3v7M9 3v7M7 3v18M17 3v18M14 3c0 5 6 5 6 0"/></svg>'};
+function esc(v){return String(v??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]))}
+function duration(a,b){if(!a||!b)return '—';let [h1,m1]=a.split(':').map(Number),[h2,m2]=b.split(':').map(Number);let n=(h2*60+m2)-(h1*60+m1);if(n<0)n+=1440;return Math.floor(n/60)+' h '+String(n%60).padStart(2,'0')}
+function show(e){
+ if(!e){$('content').innerHTML='<div class="empty">Aucune journée enregistrée à cette date.<br><a href="ma_journee.html">Saisir une journée</a></div>';return}
+ const d=new Date(e.date+'T12:00:00');
+ const date=d.toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+ const distance=e.kmstart!==''&&e.kmend!==''?Math.max(0,Number(e.kmend)-Number(e.kmstart)):null;
+ const transports=Array.isArray(e.transports)?e.transports:[];
+ const tHtml=transports.map((t,i)=>`
+  <div class="transport">
+   <div class="transport-title">Transport ${i+1}</div>
+   <div class="transport-grid">
+    <div class="transport-line">Donneur d’ordre : <b>${esc(t.donor||'—')}</b></div>
+    <div class="transport-line">Conteneur : <b>${esc(t.container||'—')}</b></div>
+    <div class="transport-line">Client : <b>${esc(t.client||'—')}</b></div>
+    <div class="transport-line">Plomb : <b>${esc(t.seal||'—')}</b></div>
+    <div class="transport-line">Châssis : <b>${esc(t.chassis||'—')}</b></div>
+    <div class="transport-line">Taille : <b>${esc(t.size||'—')}</b></div>
+    <div class="transport-line">Lieu : <b>${esc(t.city||t.place||'—')}</b></div>
+    <div class="transport-line">Import / Export : <b>${esc(t.io||t.importExport||t.import_export||t.importexport||t.type||t.operation||'—')}</b></div>
+   </div>
+  </div>`).join('');
+ const fee=(name,yes)=>`<div class="fee ${yes?'yes':'no'}"><label>${name}</label><b aria-label="${yes?'Oui':'Non'}">${yes?'✓':'×'}</b></div>`;
+ $('content').innerHTML=`
+  <div class="date">${icons.calendar}<span>${esc(date.charAt(0).toLocaleUpperCase('fr-FR')+date.slice(1))}</span></div>
+  <div class="identity">
+   <span class="driver"><b>Chauffeur :</b> ${esc((()=>{try{const p=JSON.parse(localStorage.getItem('truckpilote_profile')||'{}');return [p.firstname,p.lastname?String(p.lastname).toLocaleUpperCase('fr-FR'):''].filter(Boolean).join(' ')||'—'}catch{return '—'}})())}</span>
+   <span>${icons.truck}<b>Immatriculation :</b> ${esc(e.tractor||'—')}</span>
+   <span>${icons.box}<b>Lieu / Remarque :</b> ${esc(e.place||'—')}</span>
+  </div>
+  <section class="section"><div class="heading">${icons.clock} Horaires et activité</div>
+   <div class="metrics four">
+    <div class="metric"><label>Début de journée</label><strong>${esc(e.start||'—')}</strong></div>
+    <div class="metric"><label>Fin de journée</label><strong>${esc(e.end||'—')}</strong></div>
+    <div class="metric"><label>Amplitude</label><strong>${duration(e.start,e.end)}</strong></div>
+    <div class="metric"><label>Temps de conduite</label><strong>${esc(e.drive||'—')}</strong></div>
+   </div>
+  </section>
+  <section class="section"><div class="heading">${icons.km} Kilométrage</div>
+   <div class="metrics three">
+    <div class="metric"><label>Kilomètres départ</label><strong>${esc(e.kmstart?Number(e.kmstart).toLocaleString('fr-FR')+' km':'—')}</strong></div>
+    <div class="metric"><label>Kilomètres arrivée</label><strong>${esc(e.kmend?Number(e.kmend).toLocaleString('fr-FR')+' km':'—')}</strong></div>
+    <div class="metric"><label>Total parcouru</label><strong>${distance===null?'—':distance.toLocaleString('fr-FR')+' km'}</strong></div>
+   </div>
+  </section>
+  <section class="section"><div class="heading">${icons.truck} Transports (${transports.length})</div>${tHtml||'<div class="transport-line" style="padding:10px">Aucun transport renseigné</div>'}</section>
+  <section class="section"><div class="heading">${icons.fork} Primes et repas</div>
+   <div class="fees">${fee('Petit-déjeuner',e.breakfast)}${fee('Déjeuner',e.lunch)}${fee('Dîner',e.dinner)}${fee('Nuit',e.night)}${fee('Train',e.train)}</div>
+  </section>
+  <div class="actions">
+   <button class="print" onclick="window.print()">▣ Enregistrer en PDF ou imprimer</button>
+   <button class="more" onclick="location.href='ma_journee.html?date=${encodeURIComponent(e.date)}'">•••</button>
+  </div>`;
+}
+const params=new URLSearchParams(location.search);let date=params.get('date');let all={};try{all=JSON.parse(localStorage.getItem(KEY)||'{}')}catch{}let selected=null;try{selected=JSON.parse(sessionStorage.getItem('truckpilote_selected_print_entry')||'null')}catch{}if(selected&&selected.date===date){all[date]=selected;try{localStorage.setItem(KEY,JSON.stringify(all))}catch{}sessionStorage.removeItem('truckpilote_selected_print_entry')}const entry=all[date]||selected;try{show(entry)}catch(error){$('content').innerHTML='<div class="empty">Erreur lors de la préparation de la fiche : '+esc(error.message||error)+'</div>';console.error(error)}if(params.get('autoprint')==='1'&&entry)setTimeout(()=>window.print(),700);
+</script>
+</body></html>
