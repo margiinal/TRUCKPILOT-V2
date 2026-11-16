@@ -742,6 +742,7 @@ const weeklyCloud = createClient(
   'https://ahgdzxgowadoehqhlmqa.supabase.co',
   'sb_publishable_Oja8VvG-iIv-mTKoz3Nicw_R9EnJG9P'
 );
+weeklyCloud.from=()=>{throw new Error('Mode test V2 : feuilles locales isolées de la version officielle')};
 const weeklyStatus = document.getElementById('save-status');
 const weeklyStart = document.querySelector('.meta input[type="date"]');
 const weeklyEnd = document.querySelectorAll('.meta input[type="date"]')[1];
