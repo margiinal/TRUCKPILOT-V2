@@ -1,4 +1,4 @@
-const CACHE = 'mytruck-mate-v2-v1';
+const CACHE = 'mytruck-mate-v2-v2';
 const APP_FILES = [
  './','./index.html','./mytruck_mate_header.jpg','./icon.svg','./manifest.json',
  './ma_journee.html','./detail_journee.html','./feuille.html','./frais.html',
@@ -10,7 +10,7 @@ const APP_FILES = [
  './assets/3d/ma-feuille-semaine-scania.jpg','./assets/3d/ma-journee-bandeau-fourni.svg',
  './assets/3d/ma-journee-realiste.jpg','./assets/3d/maintenance.svg',
  './assets/3d/mes-frais-cadre.svg','./assets/3d/mes-frais-maquette.webp','./assets/3d/mes-frais.svg',
- './assets/3d/mytruck-buttons-sprite.jpg','./assets/3d/mytruck-mate-bandeau-quatre-camions.jpg',
+ './assets/3d/mytruck-buttons-sprite.jpg','./assets/3d/mytruck-icons.svg','./assets/3d/mytruck-mate-bandeau-quatre-camions.jpg',
  './assets/3d/navigation.svg','./assets/3d/parking.svg','./assets/3d/profil-fond.svg',
  './assets/3d/recap-cockpit.svg','./assets/3d/recap-cockpit.webp','./assets/3d/recapitulatif-vignette.svg',
  './assets/3d/sauvegardes-fond.svg','./assets/3d/week.svg',
