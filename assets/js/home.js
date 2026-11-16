@@ -87,7 +87,7 @@ async function showSignedIn(user) {
   const avatarInitials = fullName.trim().split(/\s+/).slice(0,2).map(part=>part[0]?.toLocaleUpperCase('fr-FR')||'').join('');
   const avatarNode = $('homeAvatarInitials'); if(avatarNode) avatarNode.textContent = avatarInitials || 'CH';
   const avatarPhoto = $('homeAvatarPhoto');
-  const savedAvatar = localStorage.getItem('truckpilote_profile_avatar_v1');
+  const savedAvatar = localStorage.getItem('truckpilote_profile_avatar_v1::'+user.id);
   if(avatarPhoto && savedAvatar){ avatarPhoto.src=savedAvatar; avatarPhoto.classList.remove('hidden'); if(avatarNode) avatarNode.classList.add('hidden'); }
   else { if(avatarPhoto){avatarPhoto.removeAttribute('src');avatarPhoto.classList.add('hidden');} if(avatarNode) avatarNode.classList.remove('hidden'); }
   const appMeta = user.app_metadata || {};
