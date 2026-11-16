@@ -625,11 +625,75 @@ header.top:after{content:"";position:absolute;inset:0;background:linear-gradient
  .bottom-nav{width:100%!important;max-width:560px!important}
 }
 
+
+/* === MYTRUCK MATE : reproduction fidèle de la maquette mobile approuvée === */
+body{min-height:100vh;background:radial-gradient(ellipse at 50% 22%,#102d46 0,#061523 52%,#030b13 100%)!important;padding-bottom:calc(78px + env(safe-area-inset-bottom))!important}
+header.top{width:min(100%,390px)!important;height:235px!important;min-height:235px!important;max-height:235px!important;margin:0 auto!important;left:auto!important;overflow:hidden!important;position:relative!important;border:0!important;border-radius:0 0 17px 17px!important;background:#061321!important;box-shadow:0 7px 25px #000b!important}
+header.top .banner-image{position:absolute!important;inset:0!important;display:block!important;width:300%!important;height:100%!important;max-width:none!important;object-fit:cover!important;object-position:center!important;transform:translateX(-33.3%)!important;filter:saturate(1.12) contrast(1.06)!important}
+header.top:after{content:"";position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(180deg,#020b1788 0%,transparent 30%,transparent 70%,#03111dd9 100%)}
+.hero-brand{position:absolute!important;z-index:3!important;top:10px!important;left:50%!important;transform:translateX(-50%)!important;display:flex!important;align-items:center!important;flex-direction:column!important;gap:0!important;width:220px!important;color:#fff!important;text-align:center!important;font-style:italic!important;text-shadow:0 2px 8px #00101c!important}
+.hero-brand .brand-truck{width:70px!important;height:40px!important;filter:drop-shadow(0 2px 5px #000)!important}
+.hero-brand strong{font-size:22px!important;font-weight:1000!important;letter-spacing:-1px!important;white-space:nowrap!important;line-height:1.1!important}
+.hero-brand strong span{color:#ff9c16!important}
+.hero-brand small{font-size:10px!important;font-weight:800!important;color:#f2f8ff!important;margin-top:3px!important}
+.hero-actions{position:absolute!important;z-index:5!important;top:15px!important;left:14px!important;right:14px!important;display:flex!important;justify-content:space-between!important;pointer-events:none!important}
+.hero-actions button{pointer-events:auto!important}
+.hero-icon{width:34px!important;height:34px!important;border:0!important;border-radius:50%!important;background:#061b2bbd!important;color:#fff!important;font-size:22px!important}
+.wrap{width:min(100%,390px)!important;max-width:390px!important;margin:0 auto!important;padding:0 14px 28px!important;position:relative!important;z-index:4!important}
+#appSection{width:100%!important}
+.profile-strip{display:flex!important;align-items:center!important;gap:9px!important;min-height:62px!important;margin:-1px 0 12px!important;padding:7px 9px!important;border:1px solid #1379a8!important;border-radius:18px!important;background:linear-gradient(115deg,#102d43f5,#071a2bf5)!important;box-shadow:0 5px 18px #0009,0 0 12px #00aaff20!important}
+.avatar-truck{width:52px!important;height:52px!important;flex:0 0 52px!important;display:grid!important;place-items:center!important;border-radius:50%!important;border:2px solid #40caff!important;background:radial-gradient(circle,#1c6086,#06192a 70%)!important;box-shadow:0 0 14px #00baff55!important}
+.avatar-truck svg{width:39px!important;height:39px!important}
+.profile-copy{flex:1!important;min-width:0!important}
+.profile-copy strong{font-size:14px!important;line-height:1.2!important}
+.profile-copy small{display:flex!important;align-items:center!important;gap:5px!important;font-size:10px!important;color:#d1e6f4!important;margin-top:4px!important;white-space:nowrap!important}
+.profile-copy .mini-truck{width:18px!important;height:18px!important;flex:0 0 18px!important}
+.status-pill{width:67px!important;min-width:67px!important;display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:2px!important;padding:5px 3px!important;border:1px solid #087db3!important;border-radius:15px!important;background:linear-gradient(145deg,#113a56,#071a2c)!important;color:#e9f8ff!important;font-size:9px!important}
+.status-pill svg{width:22px!important;height:22px!important}
+.status-pill span{font-size:9px!important;line-height:1.15!important}
+.action-day{min-height:76px!important;display:flex!important;align-items:center!important;gap:12px!important;margin:0 0 12px!important;padding:12px 14px!important;border-radius:21px!important;background:linear-gradient(110deg,#06baff 0%,#0785dc 48%,#0755a2 100%)!important;border:1px solid #43d6ff!important;box-shadow:0 0 0 2px #08aaff38,0 7px 18px #001629b5,inset 0 1px 0 #ffffff88!important}
+.action-day .action-symbol{width:43px!important;height:43px!important;display:grid!important;place-items:center!important;font-size:0!important;color:#fff!important}
+.action-day .action-symbol svg{width:42px!important;height:42px!important;filter:drop-shadow(0 1px 3px #00518b)!important}
+.action-day strong{font-size:21px!important;font-weight:900!important}
+.action-day small{font-size:12px!important;margin-top:2px!important}
+.action-day .chev{width:29px!important;height:29px!important;font-size:26px!important;background:#ffffff30!important}
+.info-card{min-height:69px!important;margin:0 0 11px!important;padding:10px 13px!important;border:1px solid #0784b5!important;border-radius:19px!important;background:linear-gradient(120deg,#102e45,#061a2b)!important;box-shadow:0 6px 17px #0008!important}
+.info-card:after{width:3px!important;background:linear-gradient(#ffd33c,#ff8c00)!important;box-shadow:0 0 10px #ffae00!important}
+.card-head{gap:8px!important;font-size:13px!important;font-weight:850!important}
+.card-head .symbol{width:34px!important;height:34px!important;display:grid!important;place-items:center!important;font-size:0!important}
+.card-head .symbol svg{width:34px!important;height:34px!important;filter:drop-shadow(0 1px 4px #ffb00066)!important}
+.prime-line{margin-top:1px!important;padding-left:43px!important}
+.prime-total{font-size:25px!important;font-weight:950!important;line-height:1.1!important}
+.prime-month{font-size:10px!important}
+.card-arrow{width:27px!important;height:27px!important;flex:0 0 27px!important}
+#homeActivityCard{min-height:112px!important;padding:9px 12px 10px!important}
+#homeActivityCard .card-head .symbol svg{filter:drop-shadow(0 0 3px #17c8ff)!important}
+.activity-grid{margin-top:7px!important}
+.activity-item{padding:0 3px!important}
+.activity-icon{height:27px!important;display:grid!important;place-items:center!important;margin-bottom:1px!important;font-size:0!important}
+.activity-icon svg{width:25px!important;height:25px!important;filter:drop-shadow(0 1px 3px #13baff66)!important}
+.activity-value{font-size:15px!important;font-weight:900!important}
+.activity-label{font-size:10px!important}
+.shortcut-grid{display:grid!important;grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:8px!important;margin:11px 0!important}
+.shortcut{min-height:66px!important;gap:3px!important;padding:6px 2px!important;border-radius:16px!important;background:linear-gradient(145deg,#103b59,#061b2d)!important;border:1px solid #168ec5!important;box-shadow:0 4px 13px #0007!important;font-size:9px!important}
+.shortcut .ico{height:28px!important;display:grid!important;place-items:center!important;font-size:0!important}
+.shortcut .ico svg{width:26px!important;height:26px!important;stroke:#f3faff!important;fill:none!important;stroke-width:2.4!important;filter:drop-shadow(0 1px 3px #05aaff88)!important}
+.shortcut span:last-child{font-size:9px!important;white-space:nowrap!important}
+.customize-row{margin:5px 0 4px!important}
+.customize-btn{padding:7px 12px!important;font-size:10px!important}
+.bottom-nav{position:fixed!important;z-index:50!important;left:50%!important;right:auto!important;bottom:0!important;transform:translateX(-50%)!important;width:min(100%,390px)!important;max-width:390px!important;display:grid!important;grid-template-columns:repeat(4,1fr)!important;padding:7px 6px calc(7px + env(safe-area-inset-bottom))!important;border:1px solid #153a54!important;border-bottom:0!important;border-radius:17px 17px 0 0!important;background:rgba(4,16,28,.97)!important;box-shadow:0 -5px 18px #0008!important;backdrop-filter:blur(14px)!important}
+.bottom-nav a{gap:2px!important;color:#a5bfd0!important;font-size:9px!important}
+.bottom-nav a span:first-child{width:27px!important;height:25px!important;display:grid!important;place-items:center!important}
+.bottom-nav a svg{width:23px!important;height:23px!important;stroke:currentColor!important;fill:none!important;stroke-width:2.2!important}
+.bottom-nav a.active{color:#00d8ff!important}
+.bottom-nav a.active span:first-child{border-radius:8px!important;background:linear-gradient(180deg,#087fbd,#003858)!important;box-shadow:0 0 13px #00baff66!important}
+@media(min-width:600px){body{background:#020b13!important}.top,.wrap,.bottom-nav{width:390px!important;max-width:390px!important}.top{border-left:1px solid #16374d!important;border-right:1px solid #16374d!important}.wrap{padding-left:14px!important;padding-right:14px!important}}
+
 </style>
 </head>
 <body>
 <header class="top">
-<img class="banner-image" src="assets/3d/mytruck-mate-bandeau-quatre-camions.jpg" alt="Les camions MYTRUCK MATE sur la route"><div class="hero-brand"><strong>MYTRUCK <span>MATE</span></strong><small>LE COMPAGNON DU ROUTIER</small></div>
+<img class="banner-image" src="assets/3d/mytruck-mate-bandeau-quatre-camions.jpg" alt="Camion MYTRUCK MATE au coucher du soleil"><div class="hero-brand"><svg class="brand-truck"><use href="assets/3d/mytruck-icons.svg#truck-logo"/></svg><strong>MYTRUCK <span>MATE</span></strong><small>Le compagnon du chauffeur</small></div>
 <div class="hero-actions"><button class="hero-icon" id="menuToggle" aria-label="Ouvrir le menu">☰</button><button class="hero-icon" id="notificationsBtn" aria-label="Notifications">🔔</button></div>
 <div class="banner-greeting"></div>
 </header>
@@ -656,11 +720,11 @@ header.top:after{content:"";position:absolute;inset:0;background:linear-gradient
 
   <section id="appSection" class="hidden">
 <div id="homeView" class="home-view">
-<div class="profile-strip"><div class="avatar-truck">🚛</div><div class="profile-copy"><strong>Bonjour <span id="helloName">chauffeur</span> 👋</strong><small>Chauffeur poids lourd · MYTRUCK MATE</small></div><div class="status-pill">☁️<br><span id="homeCity">Bonne route</span></div></div>
-<a class="action-day" href="ma_journee.html"><span class="action-symbol">▣</span><span><strong>Ma journée</strong><small>Saisir mes transports</small></span><span class="chev">›</span></a>
-<div class="info-card" id="homePrimesCard"><div class="card-head"><span class="symbol">🪙</span><span>Mes primes <span class="prime-month" id="homeMonthLabel">— mois en cours</span></span><button class="card-arrow" id="openPrimes" aria-label="Voir mes primes">›</button></div><div class="prime-line"><strong class="prime-total" id="homeFeesValue">— €</strong><span class="prime-month" id="homePrimeDays">Indemnités cumulées</span></div></div>
-<div class="info-card" id="homeActivityCard"><div class="card-head"><span class="symbol">📊</span><span>Mon activité du mois</span><button class="card-arrow" id="openActivity" aria-label="Voir mon activité">›</button></div><div class="activity-grid"><div class="activity-item"><span class="activity-icon">🛣️</span><div class="activity-value" id="homeKmValue">0 km</div><div class="activity-label">Kilomètres</div></div><div class="activity-item"><span class="activity-icon">🚚</span><div class="activity-value" id="homeMissionsValue">0</div><div class="activity-label">Missions</div></div><div class="activity-item"><span class="activity-icon">▦</span><div class="activity-value" id="homeDaysValue">0</div><div class="activity-label">Jours</div></div></div></div>
-<div class="shortcut-grid" id="homeShortcuts"><a class="shortcut" href="feuille.html"><span class="ico">▦</span><span>Ma semaine</span></a><a class="shortcut" href="recapitulatif.html"><span class="ico">▥</span><span>Mes bilans</span></a><a class="shortcut" href="historique.html"><span class="ico">▤</span><span>Mon historique</span></a><a class="shortcut" href="profil.html"><span class="ico">⚙</span><span>Mon profil</span></a></div>
+<div class="profile-strip"><div class="avatar-truck"><svg><use href="assets/3d/mytruck-icons.svg#truck-logo"/></svg></div><div class="profile-copy"><strong>Bonjour <span id="helloName">chauffeur</span> 👋</strong><small><svg class="mini-truck"><use href="assets/3d/mytruck-icons.svg#truck-logo"/></svg> Chauffeur Poids Lourd</small></div><div class="status-pill"><svg><use href="assets/3d/mytruck-icons.svg#cloud"/></svg><span id="homeCity">Le Havre<br>12°C</span></div></div>
+<a class="action-day" href="ma_journee.html"><span class="action-symbol"><svg><use href="assets/3d/mytruck-icons.svg#clipboard-truck"/></svg></span><span><strong>Ma journée</strong><small>Saisir mes transports</small></span><span class="chev">›</span></a>
+<div class="info-card" id="homePrimesCard"><div class="card-head"><span class="symbol"><svg><use href="assets/3d/mytruck-icons.svg#coins"/></svg></span><span>Mes primes <span class="prime-month" id="homeMonthLabel">— mois en cours</span></span><button class="card-arrow" id="openPrimes" aria-label="Voir mes primes">›</button></div><div class="prime-line"><strong class="prime-total" id="homeFeesValue">— €</strong><span class="prime-month" id="homePrimeDays">Indemnités cumulées</span></div></div>
+<div class="info-card" id="homeActivityCard"><div class="card-head"><span class="symbol"><svg><use href="assets/3d/mytruck-icons.svg#chart"/></svg></span><span>Mon activité du mois</span><button class="card-arrow" id="openActivity" aria-label="Voir mon activité">›</button></div><div class="activity-grid"><div class="activity-item"><span class="activity-icon"><svg><use href="assets/3d/mytruck-icons.svg#road"/></svg></span><div class="activity-value" id="homeKmValue">0 km</div><div class="activity-label">Kilomètres</div></div><div class="activity-item"><span class="activity-icon"><svg><use href="assets/3d/mytruck-icons.svg#truck-logo"/></svg></span><div class="activity-value" id="homeMissionsValue">0</div><div class="activity-label">Missions</div></div><div class="activity-item"><span class="activity-icon"><svg><use href="assets/3d/mytruck-icons.svg#calendar"/></svg></span><div class="activity-value" id="homeDaysValue">0</div><div class="activity-label">Jours</div></div></div></div>
+<div class="shortcut-grid" id="homeShortcuts"><a class="shortcut" href="feuille.html"><span class="ico"><svg><use href="assets/3d/mytruck-icons.svg#calendar"/></svg></span><span>Ma semaine</span></a><a class="shortcut" href="recapitulatif.html"><span class="ico"><svg><use href="assets/3d/mytruck-icons.svg#chart"/></svg></span><span>Mes bilans</span></a><a class="shortcut" href="historique.html"><span class="ico"><svg><use href="assets/3d/mytruck-icons.svg#documents"/></svg></span><span>Mes docs</span></a><a class="shortcut" href="profil.html"><span class="ico"><svg><use href="assets/3d/mytruck-icons.svg#pin"/></svg></span><span>Services</span></a></div>
 <div class="customize-row"><button class="customize-btn" id="customizeToggle">⚙ Personnaliser mon accueil</button></div>
 <div class="custom-panel hidden" id="customPanel"><strong>Choisir les éléments affichés</strong><label><input type="checkbox" data-widget="primes" checked> Mes primes du mois</label><label><input type="checkbox" data-widget="activity" checked> Mon activité du mois</label><label><input type="checkbox" data-widget="shortcuts" checked> Mes raccourcis</label><button class="btn" id="saveHomePrefs" type="button">Enregistrer mon accueil</button><div class="status" id="customStatus"></div></div>
 </div>
@@ -683,7 +747,7 @@ header.top:after{content:"";position:absolute;inset:0;background:linear-gradient
 <p class="notice">Tes journées sont enregistrées sur cet appareil et synchronisées avec ton compte en ligne lorsque tu es connecté. Les feuilles hebdomadaires restent pour le moment enregistrées localement sur cet appareil. Pense à exporter régulièrement tes documents.</p>
 </section>
   <div class="footer">MYTRUCK MATE · Le compagnon du chauffeur routier</div>
-  <nav class="bottom-nav" aria-label="Navigation principale"><a class="active" href="index.html"><span>⌂</span><span>Accueil</span></a><a href="ma_journee.html"><span>▣</span><span>Ma journée</span></a><a href="recapitulatif.html"><span>▥</span><span>Bilans</span></a><a href="profil.html"><span>⚙</span><span>Paramètres</span></a></nav>
+  <nav class="bottom-nav" aria-label="Navigation principale"><a class="active" href="index.html"><span><svg><use href="assets/3d/mytruck-icons.svg#home"/></svg></span><span>Accueil</span></a><a href="ma_journee.html"><span><svg><use href="assets/3d/mytruck-icons.svg#clipboard-truck"/></svg></span><span>Ma journée</span></a><a href="recapitulatif.html"><span><svg><use href="assets/3d/mytruck-icons.svg#chart"/></svg></span><span>Bilans</span></a><a href="profil.html"><span><svg><use href="assets/3d/mytruck-icons.svg#settings"/></svg></span><span>Paramètres</span></a></nav>
 
 </main>
 
