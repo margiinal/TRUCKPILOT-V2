@@ -1,0 +1,201 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#081725">
+<title>MYTRUCK MATE — Historique</title>
+<style>
+:root{--navy:#081725;--panel:#142b41;--blue:#078fe5;--cyan:#4dbaff;--ink:#f3f8fc;--muted:#a9bfd1;--line:#24445e}
+*{box-sizing:border-box}body{margin:0;background:var(--navy);color:var(--ink);font:15px Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif}
+header{background:radial-gradient(ellipse at 90% 0,#17517a 0,transparent 45%),linear-gradient(135deg,#071522,#102d47);color:white;padding:23px 18px 24px;border-bottom:1px solid #1e4868}
+header a{color:#71c8ff;text-decoration:none;font-weight:650}header .brandline{font-size:10px;letter-spacing:1.5px;color:#72caff;font-weight:850;margin-bottom:7px}
+header h1{font-size:24px;margin:8px 0 5px}header .subline{color:#b8d0e2;font-size:13px}
+main{max-width:850px;margin:auto;padding:16px}.card{background:linear-gradient(145deg,#142c42,#10263a);border:1px solid var(--line);border-radius:18px;padding:17px;margin-bottom:14px;box-shadow:0 8px 25px #0002}
+h2{font-size:18px;margin:0 0 12px;color:#f3f8fc}.muted{color:var(--muted);font-size:13px}.crumb{display:flex;gap:7px;flex-wrap:wrap;margin:12px 0 16px}
+.crumb button,.back,.item{border:1px solid #31516a;background:#0d2235;border-radius:11px;padding:11px 13px;color:#eaf4fb;font:inherit}
+.crumb button{font-size:12px}.crumb button.active{background:#123d5d;border-color:#168fe0;color:#8bd2ff;font-weight:750}
+.list{display:grid;gap:9px}.item{display:flex;justify-content:space-between;align-items:center;text-align:left;width:100%;cursor:pointer;min-height:58px;transition:border-color .15s,background .15s}
+.item:hover{border-color:#168fe0;background:#15334c}.item strong{display:block;color:#f4f9fd}.item small{display:block;color:#a9bfd1;margin-top:4px}
+.item .arrow{font-size:23px;color:#4dbaff}.back{margin-bottom:12px;cursor:pointer;color:#72caff}.detailgrid{display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:9px}
+.detail{background:#0e2235;border:1px solid #294a64;border-radius:11px;padding:11px;color:#edf5fb}.detail b{display:block;font-size:11px;color:#91b2ca;margin-bottom:5px;text-transform:uppercase;letter-spacing:.35px}
+.transport{border-top:1px solid #29445b;padding-top:12px;margin-top:14px}.transport h3{font-size:15px;color:#75caff}
+.status{font-size:13px;color:#a9bfd1;margin-top:8px;line-height:1.5}.empty{padding:22px 12px;text-align:center;color:#a9bfd1;background:#0e2235;border:1px dashed #31516a;border-radius:12px}
+@media(max-width:480px){main{padding:12px}.card{padding:14px}.detailgrid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:350px){.detailgrid{grid-template-columns:1fr}}
+
+/* Fiche détaillée MY TRUCK MATE */
+.detail-head{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap;margin:4px 0 16px}
+.detail-brand{color:#72d2ff;font-size:12px;font-weight:900;letter-spacing:1.4px}
+.detail-date{font-size:22px;font-weight:900;margin:5px 0 0;text-transform:capitalize}
+.print-action{border:1px solid #13cfff;border-radius:12px;padding:11px 16px;background:linear-gradient(110deg,#12dfff,#078fe5);color:#032238;font-weight:900;font-size:14px;cursor:pointer;box-shadow:0 0 14px #00bfff55}
+.sheet-section{margin-top:17px;border:1px solid #285575;border-radius:14px;overflow:hidden;background:#0b2134}
+.sheet-section h3{margin:0;padding:11px 14px;background:linear-gradient(90deg,#07517a,#10304a);color:#8de0ff;font-size:15px;letter-spacing:.2px}
+.sheet-section .detailgrid{padding:12px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.sheet-section .detail{min-width:0;background:#102a40;border:1px solid #315671;border-radius:10px;padding:10px}
+.sheet-section .detail b{color:#8ed8ff;font-size:10px}
+.sheet-section .detail span{overflow-wrap:anywhere}
+.transport-sheet{margin:12px;border:1px solid #315671;border-radius:11px;overflow:hidden;break-inside:avoid}
+.transport-sheet h4{margin:0;padding:9px 12px;background:#123b59;color:#72d2ff;font-size:14px}
+.transport-sheet .detailgrid{padding:10px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px}
+.sheet-total{font-weight:900;color:#fff}
+@media(max-width:480px){.detail-head{align-items:stretch}.print-action{width:100%}.sheet-section .detailgrid,.transport-sheet .detailgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.detail-date{font-size:19px}}
+@page{size:A4 portrait;margin:12mm}
+@media print{
+ html,body{background:#fff!important;color:#111!important;font:10pt Arial,sans-serif!important}
+ header,.crumb,#status,.back,.print-action{display:none!important}
+ main{max-width:none!important;padding:0!important;margin:0!important}
+ main>.card{background:#fff!important;color:#111!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important;margin:0!important}
+ .detail-head{display:block;border-bottom:2px solid #111;padding:0 0 8px;margin:0 0 10px}
+ .detail-brand{color:#333!important;font-size:9pt}
+ .detail-date{color:#111!important;font-size:19pt;margin-top:4px}
+ .sheet-section{background:#fff!important;border:1px solid #555!important;border-radius:0!important;margin-top:10px;overflow:visible}
+ .sheet-section h3{background:#e7e7e7!important;color:#111!important;border-bottom:1px solid #555;padding:7px 9px;font-size:11pt}
+ .sheet-section .detailgrid,.transport-sheet .detailgrid{padding:7px;gap:5px}
+ .sheet-section .detail,.transport-sheet .detail{background:#fff!important;color:#111!important;border:1px solid #bbb!important;border-radius:0!important;padding:6px 7px;break-inside:avoid}
+ .sheet-section .detail b,.sheet-section .detail span,.transport-sheet .detail b,.transport-sheet .detail span{color:#111!important}
+ .transport-sheet{margin:8px;border:1px solid #555!important;border-radius:0!important;break-inside:avoid}
+ .transport-sheet h4{background:#eee!important;color:#111!important;border-bottom:1px solid #777}
+ .sheet-total{color:#111!important}
+ *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+
+/* Présentation alignée sur la maquette validée */
+.detail-head{display:block;margin:0 0 14px}
+.detail-head>div:first-child{width:100%}
+.detail-brand{height:116px;background:url('./assets/fiche-entete-app.svg') center/cover no-repeat;border:1px solid #087eb8;border-radius:13px;display:flex;align-items:flex-end;justify-content:center;padding:0 10px 8px;color:#fff;font-size:0}
+.detail-date{font-size:25px;margin:12px 0 14px;text-transform:capitalize}
+.print-action{width:100%;padding:15px 18px;font-size:17px;border-radius:12px}
+.sheet-section{margin-top:14px;border:1px solid #087eb8;border-radius:14px;background:linear-gradient(145deg,#063958,#031a2c);overflow:hidden}
+.sheet-section h3{background:linear-gradient(90deg,#07517b,#087fba);color:#fff;padding:10px 15px;font-size:18px}
+.sheet-section .detailgrid{padding:10px;display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px}
+.sheet-section .detail{background:linear-gradient(145deg,#061b2d,#0a2940);border:1px solid #087eaf;border-radius:11px;text-align:center;padding:10px 8px;min-width:0}
+.sheet-section .detail b{font-size:11px;color:#aeeaff}
+.sheet-section .detail span{font-size:16px;font-weight:800;overflow-wrap:anywhere}
+.sheet-section .detail.highlight span{color:#16dfff}
+.sheet-section.info-grid{background:transparent;border:0;overflow:visible}
+.info-grid>.detailgrid{padding:0}
+.info-grid>.detailgrid>.detail{grid-column:span 2}
+.info-grid>.detailgrid>.detail:nth-child(n+3){grid-column:span 1}
+.transport-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;padding:10px}
+.transport-sheet{margin:0;border:1px solid #1687b6;border-radius:12px;overflow:hidden;background:#031b2c;break-inside:avoid}
+.transport-sheet h4{margin:0;background:linear-gradient(90deg,#13dfff,#078fe5);color:#032238;padding:7px 12px;font-size:15px;font-weight:900}
+.transport-sheet .detailgrid{padding:9px;display:grid;grid-template-columns:1fr 1fr;gap:7px}
+.transport-sheet .detail{background:#09263b;border:0;border-bottom:1px solid #23506b;border-radius:0;padding:6px 4px}
+.transport-sheet .detail b{color:#91dfff;font-size:10px}
+.transport-sheet .detail span{font-size:13px;font-weight:700}
+.meal-grid .detail{min-height:75px;display:flex;flex-direction:column;justify-content:center}
+@media(max-width:600px){.detail-brand{height:92px}.detail-date{font-size:20px}.sheet-section .detailgrid{grid-template-columns:repeat(2,minmax(0,1fr))}.transport-list{grid-template-columns:1fr}.info-grid>.detailgrid>.detail{grid-column:span 1}.info-grid>.detailgrid>.detail:nth-child(n+3){grid-column:span 1}}
+@page{size:A4 portrait;margin:10mm}
+@media print{
+ html,body{background:#fff!important;color:#111!important;font:9.5pt Arial,sans-serif!important}
+ header,.crumb,#status,.back,.print-action{display:none!important}
+ main{max-width:none!important;padding:0!important;margin:0!important}
+ main>.card{background:#fff!important;color:#111!important;border:0!important;border-radius:0!important;box-shadow:none!important;padding:0!important;margin:0!important}
+ .detail-head{margin:0 0 8px}
+ .detail-brand{height:82px;background:url('./assets/fiche-entete-impression.svg') center/contain no-repeat;border:0;border-radius:0}
+ .detail-date{background:#333!important;color:#fff!important;padding:8px 12px;margin:7px 0;font-size:16pt}
+ .sheet-section{background:#fff!important;border:1px solid #333!important;border-radius:5px!important;margin-top:8px;overflow:visible}
+ .sheet-section h3{background:#333!important;color:#fff!important;padding:6px 9px;font-size:11pt}
+ .sheet-section .detailgrid{padding:5px;gap:0}
+ .sheet-section .detail{background:#fff!important;color:#111!important;border:1px solid #999!important;border-radius:0!important;padding:6px 5px}
+ .sheet-section .detail b,.sheet-section .detail span{color:#111!important}
+ .sheet-section .detail b{font-size:8pt}.sheet-section .detail span{font-size:10pt}
+ .info-grid>.detailgrid>.detail{grid-column:span 2}
+ .info-grid>.detailgrid>.detail:nth-child(n+3){grid-column:span 1}
+ .transport-list{grid-template-columns:1fr 1fr;gap:8px;padding:6px}
+ .transport-sheet{background:#fff!important;border:1px solid #555!important;border-radius:0!important;break-inside:avoid}
+ .transport-sheet h4{background:#ddd!important;color:#111!important;border-bottom:1px solid #555}
+ .transport-sheet .detailgrid{padding:0;gap:0}
+ .transport-sheet .detail{background:#fff!important;border:1px solid #aaa!important;padding:5px}
+ .transport-sheet .detail b,.transport-sheet .detail span{color:#111!important}
+ .meal-grid .detail{min-height:50px}
+ *{-webkit-print-color-adjust:exact;print-color-adjust:exact}
+}
+</style>
+</head>
+<body>
+<header><div class="brandline">MYTRUCK MATE · DRIVER COMPANION</div><a href="index.html">← Accueil MYTRUCK MATE</a><h1>Mon historique</h1><div class="subline">Retrouve tes journées de travail, année après année.</div></header>
+<main>
+<section class="card"><div class="muted" id="status">Chargement des journées…</div><div class="crumb" id="crumb"></div><div id="content"></div></section>
+</main>
+<script>
+const KEY='truckpilote_daily_entries_v1';
+const months=['Janvier','Février','Mars','Avril','Mai','Juin','Juillet','Août','Septembre','Octobre','Novembre','Décembre'];
+const weekdays=['dimanche','lundi','mardi','mercredi','jeudi','vendredi','samedi'];
+let allEntries={}, level='years', selected={};
+const $=id=>document.getElementById(id);
+function meaningful(e){
+ if(!e||typeof e!=='object')return false;
+ if(['tractor','start','end','drive','place','kmstart','kmend'].some(k=>String(e[k]??'').trim()!==''))return true;
+ if(['breakfast','lunch','dinner','night','train'].some(k=>e[k]===true))return true;
+ if(Object.values(e.customPrimeCounts||{}).some(v=>Number(v)>0))return true;
+ return Array.isArray(e.transports)&&e.transports.some(t=>t&&Object.values(t).some(v=>String(v??'').trim()!==''));
+}
+function localEntries(){try{return JSON.parse(localStorage.getItem(KEY)||'{}')}catch{return {}}}
+function dateObj(d){const [y,m,day]=d.split('-').map(Number);return new Date(y,m-1,day)}
+function weekStart(d){const x=dateObj(d);x.setDate(x.getDate()-((x.getDay()+6)%7));return x}
+function dateKey(d){return `${d.getFullYear()}-${String(d.getMonth()+1).padStart(2,'0')}-${String(d.getDate()).padStart(2,'0')}`}
+function showCrumb(){
+ const c=$('crumb');c.innerHTML='';
+ const parts=[['years','Années'],['months',selected.year?String(selected.year):''],['weeks',selected.month!==undefined?months[selected.month]: ''],['days',selected.week?`Semaine du ${selected.week}`:'']];
+ parts.forEach(([l,t],i)=>{if(!t)return;const b=document.createElement('button');b.textContent=t;b.className=level===l?'active':'';b.onclick=()=>{level=l; if(l==='years')selected={};if(l==='months')delete selected.month,delete selected.week,delete selected.day;if(l==='weeks')delete selected.week,delete selected.day;if(l==='days')delete selected.day;render()};c.appendChild(b)});
+}
+function item(title,sub,fn){const b=document.createElement('button');b.className='item';b.innerHTML=`<span><strong>${title}</strong><small>${sub||''}</small></span><span class="arrow">›</span>`;b.onclick=fn;return b}
+function render(){
+ showCrumb();const c=$('content');c.innerHTML='';const dates=Object.keys(allEntries).filter(d=>meaningful(allEntries[d])).sort();
+ if(!dates.length){c.innerHTML='<div class="empty">Aucune journée renseignée pour le moment.</div>';return}
+ if(level==='years'){
+  const ys=[...new Set(dates.map(d=>+d.slice(0,4)))].sort((a,b)=>b-a);c.innerHTML='<h2>Choisis une année</h2><div class="list" id="list"></div>';ys.forEach(y=>$('list').append(item(y,`${dates.filter(d=>+d.slice(0,4)===y).length} journée(s)`,()=>{selected.year=y;level='months';render()})));
+ }else if(level==='months'){
+  const ms=[...new Set(dates.filter(d=>+d.slice(0,4)===selected.year).map(d=>+d.slice(5,7)-1))].sort((a,b)=>a-b);c.innerHTML='<h2>Choisis un mois</h2><div class="list" id="list"></div>';ms.forEach(m=>$('list').append(item(months[m],`${dates.filter(d=>+d.slice(0,4)===selected.year&&+d.slice(5,7)===m+1).length} journée(s)`,()=>{selected.month=m;level='weeks';render()})));
+ }else if(level==='weeks'){
+  const ds=dates.filter(d=>+d.slice(0,4)===selected.year&&+d.slice(5,7)===selected.month+1);
+  const groups={};ds.forEach(d=>{const w=dateKey(weekStart(d));(groups[w]??=[]).push(d)});
+  c.innerHTML='<h2>Choisis une semaine</h2><div class="list" id="list"></div>';Object.keys(groups).sort().reverse().forEach(w=>$('list').append(item(`Semaine du ${dateObj(w).toLocaleDateString('fr-FR')}`,`${groups[w].length} journée(s) renseignée(s)`,()=>{selected.week=w;level='days';render()})));
+ }else if(level==='days'){
+  const ds=dates.filter(d=>dateKey(weekStart(d))===selected.week);c.innerHTML='<h2>Choisis une journée</h2><div class="list" id="list"></div>';ds.sort().forEach(d=>$('list').append(item(`${weekdays[dateObj(d).getDay()]} ${dateObj(d).toLocaleDateString('fr-FR')}`,allEntries[d].tractor?`Tracteur : ${allEntries[d].tractor}`:'Détails de la journée',()=>{try{sessionStorage.setItem('truckpilote_selected_print_entry',JSON.stringify(allEntries[d]));}catch{}location.href='ma_journee.html?date='+encodeURIComponent(d)+'&mode=history'})));
+ }else if(level==='detail'){renderDetail(c)}
+}
+function addDetail(parent,label,value){if(value===undefined||value===null||String(value).trim()==='')return;const d=document.createElement('div');d.className='detail';const b=document.createElement('b');b.textContent=label;const span=document.createElement('span');span.textContent=String(value);d.append(b,span);parent.append(d)}
+function renderDetail(c){
+ const e=allEntries[selected.day]||{};
+ const head=document.createElement('div');head.className='detail-head';
+ const brand=document.createElement('div');brand.className='detail-brand';brand.setAttribute('aria-label','MY TRUCK MATE — Fiche journalière');
+ const date=document.createElement('div');date.className='detail-date';date.textContent=dateObj(selected.day).toLocaleDateString('fr-FR',{weekday:'long',day:'numeric',month:'long',year:'numeric'});
+ const print=document.createElement('button');print.type='button';print.className='print-action';print.textContent='▣  Imprimer cette journée';print.onclick=()=>window.print();
+ head.append(brand,date);c.append(head);
+ const back=document.createElement('button');back.className='back';back.textContent='← Retour aux journées';back.onclick=()=>{level='days';render()};c.append(back);
+ function section(title,extra=''){const box=document.createElement('section');box.className='sheet-section '+extra;const h=document.createElement('h3');h.textContent=title;box.append(h);const g=document.createElement('div');g.className='detailgrid';box.append(g);c.append(box);return {box,grid:g}}
+ function field(g,label,value,highlight=false){if(value===undefined||value===null||String(value).trim()==='')return;const d=document.createElement('div');d.className='detail'+(highlight?' highlight':'');const b=document.createElement('b');b.textContent=label;const span=document.createElement('span');span.textContent=String(value);d.append(b,span);g.append(d)}
+ const info=section('◷  Informations de la journée','info-grid');
+ field(info.grid,'Immatriculation',e.tractor);field(info.grid,'Lieu / remarque',e.place);
+ field(info.grid,'Début de journée',e.start);field(info.grid,'Fin de journée',e.end);
+ let amp=null;if(e.start&&e.end){const a=e.start.split(':').map(Number),b=e.end.split(':').map(Number);if(a.length===2&&b.length===2){amp=(b[0]*60+b[1])-(a[0]*60+a[1]);if(amp<0)amp+=1440}}
+ if(amp!==null)field(info.grid,'Amplitude',Math.floor(amp/60)+' h '+String(amp%60).padStart(2,'0'),true);
+ field(info.grid,'Temps de conduite',e.drive);
+ field(info.grid,'Kilomètres départ',e.kmstart?Number(e.kmstart).toLocaleString('fr-FR')+' km':'');
+ field(info.grid,'Kilomètres arrivée',e.kmend?Number(e.kmend).toLocaleString('fr-FR')+' km':'');
+ const kmA=Number(e.kmstart),kmB=Number(e.kmend);
+ if(String(e.kmstart??'').trim()!==''&&String(e.kmend??'').trim()!==''&&Number.isFinite(kmA)&&Number.isFinite(kmB)&&kmB>=kmA)field(info.grid,'Total parcouru',(kmB-kmA).toLocaleString('fr-FR')+' km',true);
+ const transports=section('🚛  Transports ('+(e.transports||[]).length+')');const list=document.createElement('div');list.className='transport-list';transports.box.append(list);
+ (e.transports||[]).forEach((t,i)=>{const box=document.createElement('article');box.className='transport-sheet';const h=document.createElement('h4');h.textContent='Transport '+(i+1);box.append(h);const g=document.createElement('div');g.className='detailgrid';[['Donneur d’ordre',t.donor],['Conteneur',t.container??t.container1],['Client',t.client],['Plomb',t.seal??t.seal1],['Châssis',t.chassis],['Taille',t.size],['Lieu',t.city??t.place],['Import / Export',t.io??t.movement],['Deuxième conteneur',t.container2],['Deuxième plomb',t.seal2]].forEach(([l,v])=>field(g,l,v));box.append(g);list.append(box)});
+ const meals=section('♨  Primes et repas','meal-grid');
+ [['Petit-déjeuner','breakfast'],['Déjeuner','lunch'],['Dîner','dinner'],['Nuit','night'],['Train','train']].forEach(([l,k])=>field(meals.grid,l,e[k]?'Oui':'Non'));
+ c.append(print);
+}
+async function load(){
+ allEntries=localEntries();let msg='Historique chargé depuis cet appareil.';
+ try{
+  const {createClient}=await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm');
+  const sb=createClient('https://ahgdzxgowadoehqhlmqa.supabase.co','sb_publishable_Oja8VvG-iIv-mTKoz3Nicw_R9EnJG9P');
+  const {data:{user},error:authError}=await sb.auth.getUser();if(authError)throw authError;
+  if(user){const {data,error}=await sb.from('truckpilote_daily_entries').select('work_date,entry').eq('user_id',user.id).order('work_date',{ascending:true});if(error)throw error;(data||[]).forEach(r=>{allEntries[r.work_date]=r.entry||{date:r.work_date}});localStorage.setItem(KEY,JSON.stringify(allEntries));msg='Historique synchronisé avec le compte en ligne ✓'}
+  else msg='Connecte-toi à l’accueil pour récupérer les journées en ligne. Les données de cet appareil restent visibles.';
+ }catch(e){msg='Historique local affiché. Synchronisation en ligne indisponible : '+(e.message||'erreur')}
+ $('status').textContent=msg;render();
+}
+load();
+if('serviceWorker'in navigator)window.addEventListener('load',()=>navigator.serviceWorker.register('./service-worker.js').catch(()=>{}));
+</script>
+</body></html>
