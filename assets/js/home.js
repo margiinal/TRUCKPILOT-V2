@@ -11,11 +11,26 @@ const appSection = $('appSection');
 let authMode = 'login';
 
 
-/* Météo réelle selon la position du chauffeur : aucune ville ni température fictive en dur. */
+/* Météo réelle selon la position actuelle du chauffeur. */
+function weatherPresentation(code){
+ if(code===0)return ['☀️','Ensoleillé'];
+ if([1,2].includes(code))return ['🌤️','Éclaircies'];
+ if(code===3)return ['☁️','Nuageux'];
+ if([45,48].includes(code))return ['🌫️','Brouillard'];
+ if([51,53,55,56,57].includes(code))return ['🌦️','Bruine'];
+ if([61,63,65,66,67,80,81,82].includes(code))return ['🌧️','Pluie'];
+ if([71,73,75,77,85,86].includes(code))return ['🌨️','Neige'];
+ if([95,96,99].includes(code))return ['⛈️','Orage'];
+ return ['🌡️','Météo actuelle'];
+}
 async function updateDriverWeather(){
- const target=document.getElementById('homeCity');
- if(!target || !navigator.geolocation) { if(target) target.textContent='Localisation indisponible'; return; }
- target.innerHTML='Localisation…';
+ const cityTarget=document.getElementById('homeCity');
+ const tempTarget=document.getElementById('weatherTemp');
+ const iconTarget=document.getElementById('weatherIcon');
+ if(!cityTarget||!navigator.geolocation){if(cityTarget)cityTarget.textContent='Localisation indisponible';return;}
+ cityTarget.textContent='Localisation…';
+ if(tempTarget)tempTarget.textContent='-- °C';
+ if(iconTarget)iconTarget.textContent='📍';
  navigator.geolocation.getCurrentPosition(async pos=>{
   try{
    const {latitude,longitude}=pos.coords;
@@ -26,9 +41,20 @@ async function updateDriverWeather(){
    const a=place.address||{};
    const city=a.city||a.town||a.village||a.municipality||a.county||'Position actuelle';
    const temp=Math.round(weather.current.temperature_2m);
-   target.textContent=city+' · '+temp+'°C';
-  }catch{target.textContent='Météo indisponible';}
- },()=>{target.textContent='Localisation désactivée';},{enableHighAccuracy:false,timeout:10000,maximumAge:600000});
+   const [symbol,description]=weatherPresentation(Number(weather.current.weather_code));
+   if(tempTarget)tempTarget.textContent=temp+' °C';
+   cityTarget.textContent=city;
+   cityTarget.title=description;
+   if(iconTarget)iconTarget.textContent=symbol;
+  }catch{
+   cityTarget.textContent='Météo indisponible';
+   if(iconTarget)iconTarget.textContent='⚠️';
+  }
+ },()=>{
+  cityTarget.textContent='Localisation désactivée';
+  if(tempTarget)tempTarget.textContent='-- °C';
+  if(iconTarget)iconTarget.textContent='📍';
+ },{enableHighAccuracy:false,timeout:10000,maximumAge:600000});
 }
 
 function updateHomeFees(entries) {
@@ -69,6 +95,7 @@ function setMode(mode) {
 async function showSignedIn(user) {
   updateHomeFees(localDailyEntries());
   updateDriverWeather();
+  const weatherModule=document.getElementById('weatherModule');if(weatherModule&&!weatherModule.dataset.bound){weatherModule.dataset.bound='1';weatherModule.addEventListener('click',updateDriverWeather);}
   try {
     const {data,error}=await supabase.from('truckpilote_daily_entries').select('work_date,entry').eq('user_id',user.id);
     if(!error){
