@@ -933,11 +933,351 @@ body{min-height:100vh;background:#030d18!important;padding-bottom:84px!important
  .top #notificationsBtn:after{content:"";position:absolute;left:17px;top:29px;width:9px;height:3px;border-radius:0 0 6px 6px;background:#eaf8ff;box-shadow:4px 4px 0 -1px #ff3434}
 }
 
+
+
+/* ACCUEIL — calage final sur la maquette mobile validée */
+body{
+  min-height:100vh!important;
+  background:#020b14!important;
+  padding-bottom:calc(78px + env(safe-area-inset-bottom))!important;
+}
+header.top{
+  position:relative!important;
+  isolation:isolate!important;
+  overflow:hidden!important;
+  width:100%!important;
+  max-width:1600px!important;
+  height:clamp(285px,78vw,430px)!important;
+  min-height:285px!important;
+  max-height:430px!important;
+  margin:0 auto!important;
+  padding:0!important;
+  border:0!important;
+  border-radius:0 0 22px 22px!important;
+  background:#041321!important;
+  box-shadow:0 12px 30px #0009!important;
+}
+header.top .banner-image{
+  position:absolute!important;
+  inset:0!important;
+  display:block!important;
+  width:100%!important;
+  height:100%!important;
+  max-width:none!important;
+  object-fit:cover!important;
+  object-position:center 48%!important;
+  filter:saturate(1.08) contrast(1.05)!important;
+}
+header.top:after{
+  content:""!important;
+  position:absolute!important;
+  inset:0!important;
+  z-index:1!important;
+  pointer-events:none!important;
+  background:linear-gradient(180deg,#020a1480 0%,transparent 34%,#020b14a8 100%)!important;
+}
+header.top .hero-brand{
+  position:absolute!important;
+  z-index:3!important;
+  left:50%!important;
+  top:27px!important;
+  transform:translateX(-50%)!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:2px!important;
+  width:max-content!important;
+  max-width:80%!important;
+  color:#fff!important;
+  line-height:1!important;
+  text-align:center!important;
+  font-style:italic!important;
+  text-shadow:0 2px 9px #00101c,0 0 15px #00101c!important;
+}
+header.top .brand-truck{
+  display:block!important;
+  width:clamp(68px,17vw,105px)!important;
+  height:clamp(38px,8vw,58px)!important;
+  filter:drop-shadow(0 0 5px #d5efff)!important;
+}
+header.top .hero-brand strong{
+  display:block!important;
+  color:#ff9416!important;
+  font-size:clamp(22px,5.6vw,36px)!important;
+  font-weight:1000!important;
+  letter-spacing:-1.2px!important;
+  white-space:nowrap!important;
+}
+header.top .hero-brand strong span{color:#fff!important}
+header.top .hero-brand small{
+  display:block!important;
+  color:#f1f7ff!important;
+  font-size:clamp(9px,2.1vw,14px)!important;
+  font-weight:800!important;
+  letter-spacing:.45px!important;
+}
+header.top .hero-actions{
+  position:absolute!important;
+  z-index:4!important;
+  inset:13px 13px auto!important;
+  display:flex!important;
+  justify-content:space-between!important;
+  pointer-events:none!important;
+}
+header.top .hero-icon{
+  position:relative!important;
+  top:auto!important;
+  left:auto!important;
+  right:auto!important;
+  width:40px!important;
+  height:40px!important;
+  border:1px solid #4bcaff66!important;
+  border-radius:50%!important;
+  background:#031525b8!important;
+  color:#fff!important;
+  opacity:1!important;
+  pointer-events:auto!important;
+  box-shadow:0 3px 12px #0008!important;
+}
+header.top #menuToggle:before{
+  content:""!important;
+  position:absolute!important;
+  left:11px!important;
+  top:12px!important;
+  width:17px!important;
+  height:14px!important;
+  border-top:2px solid #fff!important;
+  border-bottom:2px solid #fff!important;
+  background:linear-gradient(#fff,#fff) center/17px 2px no-repeat!important;
+}
+header.top #notificationsBtn:before{
+  content:""!important;
+  position:absolute!important;
+  left:13px!important;
+  top:9px!important;
+  width:12px!important;
+  height:17px!important;
+  border:2px solid #fff!important;
+  border-radius:9px 9px 5px 5px!important;
+  border-bottom:0!important;
+  background:transparent!important;
+}
+header.top #notificationsBtn:after{
+  content:"3"!important;
+  position:absolute!important;
+  top:-3px!important;
+  right:-3px!important;
+  width:17px!important;
+  height:17px!important;
+  display:grid!important;
+  place-items:center!important;
+  border-radius:50%!important;
+  background:#ef2525!important;
+  color:#fff!important;
+  font:800 10px/1 system-ui!important;
+  box-shadow:0 1px 5px #0008!important;
+}
+main.wrap{
+  position:relative!important;
+  z-index:5!important;
+  width:100%!important;
+  max-width:1120px!important;
+  margin:0 auto!important;
+  padding:0 14px calc(92px + env(safe-area-inset-bottom))!important;
+}
+#appSection{position:relative!important;z-index:5!important}
+.home-view{
+  display:flex!important;
+  flex-direction:column!important;
+  gap:11px!important;
+}
+.profile-strip{
+  position:relative!important;
+  z-index:6!important;
+  display:flex!important;
+  align-items:center!important;
+  gap:10px!important;
+  width:100%!important;
+  margin:-91px 0 3px!important;
+  padding:9px 5px 12px!important;
+  border:0!important;
+  border-radius:0!important;
+  background:linear-gradient(180deg,transparent,#04132155)!important;
+  box-shadow:none!important;
+}
+.avatar-truck{
+  flex:0 0 55px!important;
+  width:55px!important;
+  height:55px!important;
+  overflow:hidden!important;
+  border:2px solid #4bcaff!important;
+  border-radius:50%!important;
+  background-image:url("assets/3d/home-scania-hero.webp")!important;
+  background-position:72% 62%!important;
+  background-size:cover!important;
+  box-shadow:0 0 12px #00baff77!important;
+}
+.avatar-truck svg{display:none!important}
+.profile-copy{flex:1!important;min-width:0!important}
+.profile-copy strong{font-size:clamp(14px,3.7vw,18px)!important;font-weight:900!important;color:#fff!important}
+.profile-copy small{font-size:11px!important;color:#e2edf6!important}
+.profile-copy .mini-truck{width:17px!important;height:17px!important;vertical-align:middle!important}
+.status-pill{
+  flex:0 0 78px!important;
+  width:78px!important;
+  min-width:78px!important;
+  min-height:67px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:3px!important;
+  padding:6px 4px!important;
+  border:1px solid #078fc9!important;
+  border-radius:16px!important;
+  background:#061b2de8!important;
+  color:#fff!important;
+  box-shadow:0 0 13px #008cff33!important;
+}
+.status-pill svg{width:22px!important;height:20px!important}
+.status-pill span{font-size:10px!important;line-height:1.15!important;text-align:center!important}
+.action-day{
+  min-height:82px!important;
+  margin:0!important;
+  padding:12px 15px!important;
+  border:1px solid #22c9ff!important;
+  border-radius:23px!important;
+  background:linear-gradient(110deg,#04a9ff 0%,#0875ce 49%,#073d7c 100%)!important;
+  box-shadow:inset 0 1px 0 #ffffff77,0 0 10px #00bfff,0 0 23px #008cff77!important;
+}
+.action-day .action-symbol{width:52px!important;height:52px!important}
+.action-day .action-symbol svg{width:45px!important;height:45px!important}
+.action-day strong{font-size:clamp(20px,5vw,25px)!important;font-weight:950!important}
+.action-day small{font-size:13px!important}
+#homePrimesCard,#homeActivityCard{
+  width:100%!important;
+  min-height:88px!important;
+  margin:0!important;
+  padding:11px 13px 10px 14px!important;
+  border:1px solid #008fd0!important;
+  border-radius:20px!important;
+  background:linear-gradient(110deg,#102c42 0%,#071b2b 100%)!important;
+  box-shadow:inset 0 1px 0 #ffffff18,0 5px 12px #0005,0 0 8px #008cff22!important;
+}
+#homePrimesCard:before,#homeActivityCard:before{
+  content:""!important;
+  position:absolute!important;
+  left:0!important;
+  top:0!important;
+  bottom:0!important;
+  width:4px!important;
+  background:linear-gradient(180deg,#ffd34c,#ff9900,#ffd34c)!important;
+  box-shadow:0 0 10px #ffae00!important;
+}
+#homePrimesCard .card-head,#homeActivityCard .card-head{
+  min-height:29px!important;
+  gap:9px!important;
+  font-size:14px!important;
+  font-weight:900!important;
+}
+#homePrimesCard .card-head .symbol,#homeActivityCard .card-head .symbol{
+  width:34px!important;height:34px!important;flex:0 0 34px!important;
+}
+#homePrimesCard .card-head .symbol svg,#homeActivityCard .card-head .symbol svg{
+  width:31px!important;height:31px!important;
+}
+.prime-line{
+  justify-content:flex-start!important;
+  padding:0 0 0 43px!important;
+  margin-top:0!important;
+}
+.prime-total{font-size:clamp(23px,6vw,29px)!important;font-weight:950!important}
+#homePrimeDays{display:none!important}
+#homeActivityCard{min-height:130px!important}
+#homeActivityCard .activity-grid{margin-top:8px!important}
+#homeActivityCard .activity-item{padding:0 4px!important}
+#homeActivityCard .activity-icon{height:29px!important}
+#homeActivityCard .activity-icon svg{width:28px!important;height:28px!important}
+#homeActivityCard .activity-value{font-size:16px!important;font-weight:950!important}
+#homeActivityCard .activity-label{font-size:10px!important}
+.shortcut-grid{
+  display:grid!important;
+  grid-template-columns:repeat(4,minmax(0,1fr))!important;
+  gap:8px!important;
+  width:100%!important;
+  margin:0!important;
+}
+.shortcut{
+  min-width:0!important;
+  min-height:75px!important;
+  padding:8px 3px!important;
+  display:flex!important;
+  flex-direction:column!important;
+  align-items:center!important;
+  justify-content:center!important;
+  gap:5px!important;
+  border:1px solid #087fb5!important;
+  border-radius:17px!important;
+  background:linear-gradient(145deg,#12334d,#071b2b)!important;
+  box-shadow:inset 0 1px 0 #ffffff18,0 4px 10px #0004!important;
+}
+.shortcut .ico{width:29px!important;height:28px!important;display:grid!important;place-items:center!important}
+.shortcut .ico svg{width:26px!important;height:26px!important}
+.shortcut>span:last-child{font-size:10px!important;font-weight:800!important;white-space:nowrap!important}
+.customize-row,.custom-panel{display:none!important}
+.bottom-nav{
+  position:fixed!important;
+  z-index:50!important;
+  left:50%!important;
+  right:auto!important;
+  bottom:0!important;
+  transform:translateX(-50%)!important;
+  width:min(100%,560px)!important;
+  max-width:560px!important;
+  min-height:72px!important;
+  padding:8px 8px calc(8px + env(safe-area-inset-bottom))!important;
+  display:grid!important;
+  grid-template-columns:repeat(4,1fr)!important;
+  gap:2px!important;
+  border:1px solid #075c87!important;
+  border-bottom:0!important;
+  border-radius:19px 19px 0 0!important;
+  background:linear-gradient(180deg,#071c2cfa,#020d17 90%)!important;
+  box-shadow:0 -5px 18px #0008,0 0 14px #008cff22!important;
+  backdrop-filter:blur(14px)!important;
+}
+.bottom-nav a{display:flex!important;flex-direction:column!important;align-items:center!important;justify-content:center!important;gap:3px!important;color:#d3e2ed!important;font-size:10px!important;font-weight:700!important}
+.bottom-nav a>span:first-child{width:28px!important;height:26px!important;display:grid!important;place-items:center!important}
+.bottom-nav a svg{width:24px!important;height:24px!important}
+.bottom-nav a.active{color:#00d9ff!important;text-shadow:0 0 9px #00cfff!important}
+.bottom-nav a.active>span:first-child{border-radius:8px!important;background:linear-gradient(180deg,#087fbd,#003858)!important;box-shadow:0 0 13px #00baff66!important}
+@media(min-width:700px){
+  header.top{height:clamp(360px,34vw,470px)!important}
+  header.top .hero-brand{top:25px!important}
+  main.wrap{padding:0 24px 105px!important}
+  .home-view{display:grid!important;grid-template-columns:repeat(2,minmax(0,1fr))!important;gap:14px!important}
+  .profile-strip,.action-day,.shortcut-grid{grid-column:1/-1!important}
+  .profile-strip{margin-top:-116px!important;max-width:100%!important}
+  .action-day{min-height:88px!important}
+  #homePrimesCard,#homeActivityCard{min-height:120px!important}
+  #homeActivityCard{min-height:145px!important}
+  .shortcut{min-height:86px!important}
+}
+@media(max-width:430px){
+  header.top{height:clamp(285px,82vw,355px)!important}
+  .profile-strip{margin-top:-92px!important}
+  main.wrap{padding-left:13px!important;padding-right:13px!important}
+  .shortcut-grid{gap:7px!important}
+  .shortcut{min-height:70px!important;border-radius:15px!important}
+  .shortcut>span:last-child{font-size:9px!important}
+}
+
 </style>
 </head>
 <body>
 <header class="top">
-<img class="banner-image" src="assets/3d/home-header-reference.webp" alt="Bandeau d’accueil MYTRUCK MATE"><div class="hero-brand"><svg class="brand-truck"><use href="assets/3d/mytruck-icons.svg#truck-logo"/></svg><strong>MYTRUCK <span>MATE</span></strong><small>Le compagnon du chauffeur</small></div><div class="hero-actions"><button class="hero-icon menu-hit" id="menuToggle" aria-label="Ouvrir le menu"></button><button class="hero-icon notification-hit" id="notificationsBtn" aria-label="Notifications"></button></div>
+<img class="banner-image" src="assets/3d/home-scania-hero.webp" alt="Bandeau d’accueil MYTRUCK MATE"><div class="hero-brand"><svg class="brand-truck"><use href="assets/3d/mytruck-icons.svg#truck-logo"/></svg><strong>MYTRUCK <span>MATE</span></strong><small>Le compagnon du chauffeur</small></div><div class="hero-actions"><button class="hero-icon menu-hit" id="menuToggle" aria-label="Ouvrir le menu"></button><button class="hero-icon notification-hit" id="notificationsBtn" aria-label="Notifications"></button></div>
 <div class="banner-greeting"></div>
 </header>
 
@@ -963,7 +1303,7 @@ body{min-height:100vh;background:#030d18!important;padding-bottom:84px!important
 
   <section id="appSection" class="hidden">
 <div id="homeView" class="home-view">
-<div class="profile-strip"><div class="avatar-truck"><svg><use href="assets/3d/mytruck-icons.svg#truck-logo"/></svg></div><div class="profile-copy"><strong>Bonjour <span id="helloName">chauffeur</span> 👋</strong><small><svg class="mini-truck"><use href="assets/3d/mytruck-icons.svg#truck-logo"/></svg> Chauffeur Poids Lourd</small></div><div class="status-pill"><svg><use href="assets/3d/mytruck-icons.svg#cloud"/></svg><span id="homeCity">Le Havre<br>12°C</span></div></div>
+<div class="profile-strip"><div class="avatar-truck"><svg><use href="assets/3d/mytruck-icons.svg#truck-logo"/></svg></div><div class="profile-copy"><strong>Bonjour <span id="helloName">chauffeur</span> 👋</strong><small><svg class="mini-truck"><use href="assets/3d/mytruck-icons.svg#truck-logo"/></svg> Chauffeur Poids Lourd</small></div><div class="status-pill"><svg><use href="assets/3d/mytruck-icons.svg#cloud"/></svg><span id="homeCity">Activer la<br>localisation</span></div></div>
 <a class="action-day" href="ma_journee.html"><span class="action-symbol"><svg><use href="assets/3d/mytruck-icons.svg#clipboard-truck"/></svg></span><span><strong>Ma journée</strong><small>Saisir mes transports</small></span><span class="chev">›</span></a>
 <div class="info-card" id="homePrimesCard"><div class="card-head"><span class="symbol"><svg><use href="assets/3d/mytruck-icons.svg#coins"/></svg></span><span>Mes primes <span class="prime-month" id="homeMonthLabel">— mois en cours</span></span><button class="card-arrow" id="openPrimes" aria-label="Voir mes primes">›</button></div><div class="prime-line"><strong class="prime-total" id="homeFeesValue">— €</strong><span class="prime-month" id="homePrimeDays">Indemnités cumulées</span></div></div>
 <div class="info-card" id="homeActivityCard"><div class="card-head"><span class="symbol"><svg><use href="assets/3d/mytruck-icons.svg#chart"/></svg></span><span>Mon activité du mois</span><button class="card-arrow" id="openActivity" aria-label="Voir mon activité">›</button></div><div class="activity-grid"><div class="activity-item"><span class="activity-icon"><svg><use href="assets/3d/mytruck-icons.svg#road"/></svg></span><div class="activity-value" id="homeKmValue">0 km</div><div class="activity-label">Kilomètres</div></div><div class="activity-item"><span class="activity-icon"><svg><use href="assets/3d/mytruck-icons.svg#truck-logo"/></svg></span><div class="activity-value" id="homeMissionsValue">0</div><div class="activity-label">Missions</div></div><div class="activity-item"><span class="activity-icon"><svg><use href="assets/3d/mytruck-icons.svg#calendar"/></svg></span><div class="activity-value" id="homeDaysValue">0</div><div class="activity-label">Jours</div></div></div></div>
