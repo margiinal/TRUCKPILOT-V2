@@ -688,7 +688,26 @@ header.top:after{content:"";position:absolute;inset:0;z-index:1;pointer-events:n
 .bottom-nav a.active{color:#00d8ff!important}
 .bottom-nav a.active span:first-child{border-radius:8px!important;background:linear-gradient(180deg,#087fbd,#003858)!important;box-shadow:0 0 13px #00baff66!important}
 body.menu-open header.top .banner-image{height:100%!important;width:300%!important;object-fit:cover!important;object-position:center!important;transform:translateX(-33.3%)!important}
-@media(min-width:600px){body{background:#020b13!important}.top,.wrap,.bottom-nav{width:390px!important;max-width:390px!important}.top{border-left:1px solid #16374d!important;border-right:1px solid #16374d!important}.wrap{padding-left:14px!important;padding-right:14px!important}}
+/* Affichage ordinateur : on conserve la même identité graphique sans enfermer l'application dans une largeur mobile. */
+@media(min-width:600px){
+ body{background:#020b13!important;padding-bottom:78px!important}
+ .top{width:100%!important;max-width:1180px!important;margin:0 auto!important;border-left:1px solid #16374d!important;border-right:1px solid #16374d!important}
+ .banner-image{height:clamp(230px,25vw,340px)!important}
+ .wrap{width:100%!important;max-width:1180px!important;margin:0 auto!important;padding:20px clamp(20px,3vw,42px) 36px!important}
+ .profile-strip{max-width:100%!important}
+ .action-day{min-height:78px!important}
+ .info-card{margin-bottom:14px!important}
+ .shortcut-grid{grid-template-columns:repeat(4,minmax(0,1fr))!important;gap:14px!important}
+ .shortcut{min-height:90px!important;font-size:12px!important}
+ .bottom-nav{left:50%!important;right:auto!important;transform:translateX(-50%)!important;width:min(100% - 40px,900px)!important;max-width:900px!important;border-radius:17px 17px 0 0!important}
+}
+@media(min-width:900px){
+ .home-view{display:grid!important;grid-template-columns:minmax(0,1.2fr) minmax(300px,.8fr)!important;gap:14px!important;align-items:start!important}
+ .profile-strip,.action-day{grid-column:1 / -1!important}
+ #homePrimesCard,#homeActivityCard{margin:0!important}
+ #homeShortcuts{grid-column:1 / -1!important}
+ .customize-row,.custom-panel{grid-column:1 / -1!important}
+}
 
 </style>
 </head>
@@ -765,6 +784,27 @@ const authSection = $('authSection');
 const appSection = $('appSection');
 let authMode = 'login';
 
+
+/* Météo réelle selon la position du chauffeur : aucune ville ni température fictive en dur. */
+async function updateDriverWeather(){
+ const target=document.getElementById('homeCity');
+ if(!target || !navigator.geolocation) { if(target) target.textContent='Localisation indisponible'; return; }
+ target.innerHTML='Localisation…';
+ navigator.geolocation.getCurrentPosition(async pos=>{
+  try{
+   const {latitude,longitude}=pos.coords;
+   const [weather,place]=await Promise.all([
+    fetch('https://api.open-meteo.com/v1/forecast?latitude='+latitude+'&longitude='+longitude+'&current=temperature_2m,weather_code&timezone=auto').then(r=>{if(!r.ok)throw new Error('Météo indisponible');return r.json()}),
+    fetch('https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat='+latitude+'&lon='+longitude+'&zoom=10').then(r=>{if(!r.ok)throw new Error('Ville indisponible');return r.json()})
+   ]);
+   const a=place.address||{};
+   const city=a.city||a.town||a.village||a.municipality||a.county||'Position actuelle';
+   const temp=Math.round(weather.current.temperature_2m);
+   target.textContent=city+' · '+temp+'°C';
+  }catch{target.textContent='Météo indisponible';}
+ },()=>{target.textContent='Localisation désactivée';},{enableHighAccuracy:false,timeout:10000,maximumAge:600000});
+}
+
 function updateHomeFees(entries) {
  const now=new Date(),ym=now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0');
  const monthLabel=now.toLocaleDateString('fr-FR',{month:'long',year:'numeric'});
@@ -802,6 +842,7 @@ function setMode(mode) {
 }
 async function showSignedIn(user) {
   updateHomeFees(localDailyEntries());
+  updateDriverWeather();
   try {
     const {data,error}=await supabase.from('truckpilote_daily_entries').select('work_date,entry').eq('user_id',user.id);
     if(!error){
