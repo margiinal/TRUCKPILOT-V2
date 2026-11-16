@@ -201,7 +201,7 @@ async function load(){
  allEntries=localEntries();let msg='Historique chargé depuis cet appareil.';
  try{
   const {createClient}=await import('https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm');
-  const sb=createClient('https://ahgdzxgowadoehqhlmqa.supabase.co','sb_publishable_Oja8VvG-iIv-mTKoz3Nicw_R9EnJG9P');
+  const sb=createClient('https://ahgdzxgowadoehqhlmqa.supabase.co','sb_publishable_Oja8VvG-iIv-mTKoz3Nicw_R9EnJG9P');sb.from=()=>{throw new Error('Mode test V2 : données locales isolées')};
   const {data:{user},error:authError}=await sb.auth.getUser();if(authError)throw authError;
   if(user){const {data,error}=await sb.from('truckpilote_daily_entries').select('work_date,entry').eq('user_id',user.id).order('work_date',{ascending:true});if(error)throw error;(data||[]).forEach(r=>{allEntries[r.work_date]=r.entry||{date:r.work_date}});localStorage.setItem(KEY,JSON.stringify(allEntries));msg='Historique synchronisé avec le compte en ligne ✓'}
   else msg='Connecte-toi à l’accueil pour récupérer les journées en ligne. Les données de cet appareil restent visibles.';
