@@ -1,0 +1,41 @@
+name: Assemble MYTRUCK MATE banner
+on:
+  push:
+    branches: [reconstruction-propre]
+    paths:
+      - 'assets/3d/_banner-parts/**'
+permissions:
+  contents: write
+jobs:
+  assemble:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: reconstruction-propre
+          token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Assemble WebP and integrate it
+        run: |
+          python - <<'PY'
+          from pathlib import Path
+          import base64
+          parts=sorted(Path('assets/3d/_banner-parts').glob('*.txt'))
+          data=''.join(p.read_text().strip() for p in parts)
+          Path('assets/3d/bandeau-mytruck-mate.webp').write_bytes(base64.b64decode(data))
+          p=Path('index.html')
+          s=p.read_text().replace('assets/3d/bandeau-mytruck-mate.svg','assets/3d/bandeau-mytruck-mate.webp')
+          p.write_text(s)
+          p=Path('service-worker.js')
+          s=p.read_text().replace('mytruck-mate-v2-v11','mytruck-mate-v2-v12')
+          s=s.replace("'./assets/3d/bandeau-mytruck-mate.svg'","'./assets/3d/bandeau-mytruck-mate.webp'")
+          if "'./assets/3d/bandeau-mytruck-mate.webp'" not in s:
+              s=s.replace("'./assets/css/home.css','./assets/js/home.js'","'./assets/css/home.css','./assets/js/home.js','./assets/3d/bandeau-mytruck-mate.webp'")
+          p.write_text(s)
+          PY
+          git rm -f assets/3d/bandeau-mytruck-mate.svg || true
+          rm -rf assets/3d/_banner-parts
+          git add index.html service-worker.js assets/3d/bandeau-mytruck-mate.webp
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "Installer le vrai bandeau WebP MYTRUCK MATE"
+          git push
