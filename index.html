@@ -709,8 +709,10 @@ async function showSignedIn(user) {
       updateHomeFees(merged);
     }
   } catch {}
-  const metadata = user.user_metadata || {};
-  const fullName = metadata.full_name || localStorage.getItem('truckpilote_profile_name') || '';
+  const localMeta=(()=>{try{return JSON.parse(localStorage.getItem('truckpilote_profile_v2_metadata')||'{}')}catch{return {}}})();
+  const localProfile=(()=>{try{return JSON.parse(localStorage.getItem('truckpilote_profile')||'{}')}catch{return {}}})();
+  const metadata = {...(user.user_metadata || {}),...localMeta};
+  const fullName = metadata.full_name || [localProfile.firstname,localProfile.lastname].filter(Boolean).join(' ') || localStorage.getItem('truckpilote_profile_name') || '';
   const firstName = fullName.trim().split(/\s+/)[0] || 'chauffeur';
   $('helloName').textContent = firstName;
   $('accountName').textContent = fullName || 'Compte chauffeur';
