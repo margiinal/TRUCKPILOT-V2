@@ -47,7 +47,7 @@ try{
  const {data,error}=await sb.auth.getUser();if(error)throw error;user=data.user;
  if(!user)throw new Error('Connecte-toi à ton compte depuis l’accueil pour configurer tes primes.');
  // Le profil du compte connecté est prioritaire sur les anciennes données locales.
- const metadata=user.user_metadata||{};
+ const localMeta=(()=>{try{return JSON.parse(localStorage.getItem('truckpilote_profile_v2_metadata')||'{}')}catch{return {}}})();const metadata={...(user.user_metadata||{}),...localMeta};
  const accountName=String(metadata.full_name||'').trim();
  const nameParts=accountName.split(/\s+/).filter(Boolean);
  if(metadata.firstname)document.getElementById('firstname').value=metadata.firstname;
@@ -55,7 +55,7 @@ try{
  if(metadata.lastname)document.getElementById('lastname').value=metadata.lastname;
  else if(nameParts.length>1)document.getElementById('lastname').value=nameParts.slice(-1)[0];
  if(user.email)document.getElementById('email').value=user.email;
- const localMeta=(()=>{try{return JSON.parse(localStorage.getItem('truckpilote_profile_v2_metadata')||'{}')}catch{return {}}})();const primes=localMeta.custom_primes||user.user_metadata?.custom_primes||[];const savedLists=localMeta.custom_lists||user.user_metadata?.custom_lists||{};Object.entries(listFields).forEach(([field,key])=>{document.getElementById(field).value=(savedLists[key]||defaultLists[key]).join('\n')});
+ const primes=localMeta.custom_primes||user.user_metadata?.custom_primes||[];const savedLists=localMeta.custom_lists||user.user_metadata?.custom_lists||{};Object.entries(listFields).forEach(([field,key])=>{document.getElementById(field).value=(savedLists[key]||defaultLists[key]).join('\n')});
  for(let i=0;i<3;i++){const x=primes[i]||{};document.getElementById('prime'+(i+1)+'Name').value=x.name||'';document.getElementById('prime'+(i+1)+'Emoji').value=x.emoji||'';document.getElementById('prime'+(i+1)+'Rate').value=x.rate??'';document.getElementById('prime'+(i+1)+'Enabled').checked=!!x.enabled}
  status.textContent='Réglages du compte chargés ✓';
 }catch(e){status.textContent=e.message||'Connexion indisponible'}
