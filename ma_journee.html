@@ -195,6 +195,7 @@ if(historyMode){document.getElementById('clearSaved').hidden=true;document.query
 import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2/+esm';
 const LOCAL_KEY='truckpilote_daily_entries_v1';
 const supabase=createClient('https://ahgdzxgowadoehqhlmqa.supabase.co','sb_publishable_Oja8VvG-iIv-mTKoz3Nicw_R9EnJG9P');
+supabase.from=()=>{throw new Error('Mode test V2 : données locales isolées de la version officielle')};
 const status=document.getElementById('status');
 const isMeaningful=e=>{if(!e||typeof e!=='object')return false;const fields=['tractor','place','start','end','drive','kmstart','kmend'];if(fields.some(k=>String(e[k]??'').trim()!==''))return true;if(['breakfast','lunch','dinner','night','train'].some(k=>e[k]===true))return true;if(Object.values(e.customPrimeCounts||{}).some(v=>Number(v)>0))return true;return Array.isArray(e.transports)&&e.transports.some(t=>t&&Object.values(t).some(v=>String(v??'').trim()!==''))};
 async function getUser(){const {data:{user},error}=await supabase.auth.getUser();if(error)throw error;if(!user)throw new Error('Connexion nécessaire : retournez à l’accueil et connectez-vous.');return user}
