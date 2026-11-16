@@ -1,16 +1,16 @@
-const CACHE = 'mytruck-mate-v2-v8';
+const CACHE = 'mytruck-mate-v2-v9';
 const APP_FILES = [
  './','./index.html','./mytruck_mate_header.jpg','./icon.svg','./manifest.json',
  './ma_journee.html','./detail_journee.html','./feuille.html','./frais.html',
  './historique.html','./recapitulatif.html','./profil.html',
- './assets/3d/dashboard-icons.svg','./assets/3d/home-header-reference.webp','./assets/3d/home-scania-hero.webp','./assets/3d/detail-journee-apercu.svg',
+ './assets/css/home.css','./assets/js/home.js','./assets/3d/dashboard-icons.svg','./assets/3d/home-scania-hero.webp','./assets/3d/detail-journee-apercu.svg',
  './assets/3d/documents-fond.svg','./assets/3d/food.svg','./assets/3d/fuel.svg',
  './assets/3d/historique-approuve.svg','./assets/3d/historique-corrige.svg',
  './assets/3d/historique-maquette.jpg','./assets/3d/ma-feuille-semaine-3d.jpg',
  './assets/3d/ma-feuille-semaine-scania.jpg','./assets/3d/ma-journee-bandeau-fourni.svg',
  './assets/3d/ma-journee-realiste.jpg','./assets/3d/maintenance.svg',
  './assets/3d/mes-frais-cadre.svg','./assets/3d/mes-frais-maquette.webp','./assets/3d/mes-frais.svg',
- './assets/3d/mytruck-buttons-sprite.jpg','./assets/3d/mytruck-icons.svg','./assets/3d/mytruck-mate-bandeau-quatre-camions.jpg',
+ './assets/3d/mytruck-buttons-sprite.jpg','./assets/3d/mytruck-icons.svg',
  './assets/3d/navigation.svg','./assets/3d/parking.svg','./assets/3d/profil-fond.svg',
  './assets/3d/recap-cockpit.svg','./assets/3d/recap-cockpit.webp','./assets/3d/recapitulatif-vignette.svg',
  './assets/3d/sauvegardes-fond.svg','./assets/3d/week.svg',
