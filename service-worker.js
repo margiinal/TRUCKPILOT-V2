@@ -1,9 +1,10 @@
-const CACHE = 'mytruck-mate-v2-v13';
+const CACHE = 'mytruck-mate-v2-v14';
 const APP_FILES = [
  './','./index.html','./mytruck_mate_header.jpg','./icon.svg','./manifest.json',
  './ma_journee.html','./detail_journee.html','./feuille.html','./frais.html',
  './historique.html','./recapitulatif.html','./profil.html',
  './assets/css/home.css','./assets/js/home.js','./assets/3d/mytruck-mate-bandeau-v2.webp',
+ './assets/3d/mytruck-mate-banniere-accueil-v2.webp',
  './assets/3d/tile-entretien.webp',
  './assets/3d/tile-ma-journee.webp',
  './assets/3d/tile-ma-semaine.webp',
