@@ -537,12 +537,51 @@ body{padding-bottom:calc(72px + env(safe-area-inset-bottom))!important}
  main.wrap{padding-top:18px!important}
 }
 
+
+/* MYTRUCK MATE V2 — accueil premium */
+:root{--navy:#061321;--cyan:#12c8ff;--gold:#ffad18}
+body{background:radial-gradient(ellipse at top,#102d46 0,#061321 58%);padding-bottom:calc(78px + env(safe-area-inset-bottom))!important}
+header.top{height:auto!important;min-height:0!important;max-height:none!important;overflow:hidden!important;position:relative!important;width:100%!important;margin:0!important;padding:0!important;background:#061321!important;border:0!important;box-shadow:0 10px 30px #0008!important}
+header.top .banner-image{position:relative!important;display:block!important;width:100%!important;height:clamp(190px,58vw,330px)!important;object-fit:cover!important;object-position:center 43%!important}
+.hero-actions{position:absolute;z-index:8;top:max(12px,env(safe-area-inset-top));left:14px;right:14px;display:flex;align-items:center;justify-content:space-between}
+.hero-icon{position:relative;width:40px;height:40px;border:1px solid #8ddcff77;border-radius:13px;background:#041a2bd9;color:#fff;font-size:21px;display:grid;place-items:center;box-shadow:0 4px 15px #0008;cursor:pointer}
+.banner-greeting{display:none!important}
+.wrap{max-width:620px!important;margin:0 auto!important;padding:12px 12px 28px!important;position:relative!important;z-index:5!important}
+#appSection{display:block}#appSection.hidden{display:none!important}
+.profile-strip{display:flex;align-items:center;gap:10px;margin:-4px 2px 13px;padding:10px 11px;border:1px solid #1b719d;border-radius:18px;background:linear-gradient(115deg,#0d2d45ed,#071a2bea);box-shadow:0 8px 22px #0005}
+.avatar-truck{width:52px;height:52px;flex:0 0 52px;border-radius:50%;display:grid;place-items:center;border:2px solid #41c9ff;background:linear-gradient(145deg,#135b83,#07192a);font-size:27px;box-shadow:0 0 16px #00aaff55}
+.profile-copy{min-width:0;flex:1}.profile-copy strong{font-size:15px;display:block;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}.profile-copy small{display:block;color:#b7d5e8;font-size:11px;margin-top:4px}
+.status-pill{border:1px solid #1c9bd2;border-radius:12px;background:#092c45;padding:8px 10px;text-align:center;color:#dff6ff;font-size:10px;font-weight:800;white-space:nowrap}
+.action-day{display:flex;align-items:center;gap:12px;width:100%;min-height:76px;padding:13px 15px;border-radius:20px;text-decoration:none;color:#fff;background:linear-gradient(110deg,#06a9fa,#0759a6 78%);border:1px solid #60d7ff;box-shadow:0 0 0 2px #098de933,0 8px 20px #001c35aa,inset 0 1px 0 #ffffff75;margin-bottom:12px}
+.action-day .action-symbol{font-size:32px;line-height:1}.action-day strong{font-size:20px;display:block}.action-day small{display:block;color:#e4f7ff;font-size:12px;margin-top:3px}.action-day .chev{margin-left:auto;font-size:25px;background:#ffffff2c;border-radius:50%;width:29px;height:29px;display:grid;place-items:center}
+.info-card{border:1px solid #1777a8;border-radius:19px;background:linear-gradient(125deg,#0d2b42,#061a2b);padding:12px 14px;margin-bottom:11px;box-shadow:0 7px 18px #0005;position:relative;overflow:hidden}
+.info-card:after{content:"";position:absolute;left:0;top:0;bottom:0;width:3px;background:linear-gradient(#ffbd26,#ff7b00);box-shadow:0 0 12px #ff9d00}
+.card-head{display:flex;align-items:center;gap:9px;color:#f4faff;font-size:14px;font-weight:850}.card-head .symbol{font-size:24px;line-height:1}
+.prime-line{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-top:4px}.prime-total{font-size:25px;font-weight:950;letter-spacing:.3px;color:#fff}.prime-month{font-size:11px;color:#b9d7e9}
+.card-arrow{margin-left:auto;border:0;background:#ffffff20;color:#eaf8ff;width:27px;height:27px;border-radius:50%;font-size:20px;cursor:pointer}
+.activity-grid{display:grid;grid-template-columns:repeat(3,1fr);margin-top:12px}.activity-item{text-align:center;padding:0 5px;border-right:1px solid #356079}.activity-item:last-child{border-right:0}
+.activity-icon{font-size:23px;display:block;margin-bottom:4px}.activity-value{font-size:16px;font-weight:900;color:#f6fbff}.activity-label{font-size:10px;color:#b5d0e2;margin-top:3px}
+.shortcut-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:8px;margin:12px 0}
+.shortcut{min-width:0;min-height:72px;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:5px;text-decoration:none;color:#eff9ff;background:linear-gradient(145deg,#0d3958,#061a2c);border:1px solid #1684bd;border-radius:15px;box-shadow:0 5px 12px #0004;font-size:10px;font-weight:750;text-align:center;padding:7px 3px}
+.shortcut .ico{font-size:23px;line-height:1}.customize-row{display:flex;justify-content:center;margin:8px 0 4px}.customize-btn{border:1px solid #276f95;border-radius:30px;background:#09253a;color:#9edfff;padding:8px 13px;font-size:11px;font-weight:800}
+.custom-panel{margin:9px 0;padding:13px;border:1px solid #1b719d;border-radius:15px;background:#0a2134}.custom-panel label{display:flex;align-items:center;gap:9px;margin:10px 0;color:#e6f6ff;font-size:12px}.custom-panel input{accent-color:#08a8f5;width:17px;height:17px}
+.menu-title{display:flex;align-items:center;gap:10px;margin:5px 2px 12px;font-size:16px;font-weight:850;color:#eaf7ff}
+.menu-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:9px}
+.menu-tile{min-height:100px;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;gap:6px;padding:9px 5px;border:1px solid #1596d1;border-radius:14px;background:linear-gradient(145deg,#0b3a5d,#071c31);color:#f4fbff;text-decoration:none;box-shadow:0 5px 14px #0005}
+.menu-tile .ico{font-size:25px;line-height:1}.menu-tile strong{font-size:11px;line-height:1.2}.menu-tile small{font-size:8px;color:#a9d5ed;line-height:1.2}.menu-tile.disabled{opacity:.62;filter:saturate(.7);cursor:default}
+.menu-promo{margin-top:14px;padding:15px;border-radius:15px;border:1px solid #1678a8;background:linear-gradient(110deg,#08243a,#0c3550);color:#cfeaff;font-size:11px;line-height:1.6}
+.bottom-nav{position:fixed!important;z-index:1000!important;left:0!important;right:0!important;bottom:0!important;max-width:620px!important;margin:0 auto!important;transform:none!important;display:grid!important;grid-template-columns:repeat(4,1fr)!important;padding:8px 8px calc(8px + env(safe-area-inset-bottom))!important;background:rgba(4,16,28,.97)!important;border:1px solid #1a4965!important;border-bottom:0!important;border-radius:16px 16px 0 0!important;backdrop-filter:blur(16px)!important}
+.bottom-nav a{display:flex!important;flex-direction:column!important;align-items:center!important;gap:3px!important;color:#91abc0!important;text-decoration:none!important;font-size:10px!important;font-weight:750!important}.bottom-nav a.active{color:#11d4ff!important;text-shadow:0 0 12px #00baff}.bottom-nav a span:first-child{font-size:21px!important}
+.footer{display:none}
+@media(min-width:700px){.wrap{padding:18px 18px 35px!important}.action-day{min-height:86px}.info-card{padding:14px 17px}.menu-tile{min-height:130px}.shortcut{min-height:84px}}
+@media(max-width:380px){.shortcut-grid{gap:5px}.shortcut{font-size:9px;min-height:67px}.menu-grid{gap:7px}.menu-tile{min-height:92px}.prime-total{font-size:22px}}
 </style>
 </head>
 <body>
 <header class="top">
-  <img class="banner-image" src="mytruck_mate_header.png" alt="MYTRUCK MATE — le compagnon du routier">
-  <div class="banner-greeting"><div class="welcome-title">👋 Bonjour <span id="helloName">chauffeur</span></div><div class="sub">Ton compagnon au quotidien,<br>sur toutes les routes.</div></div>
+<img class="banner-image" src="mytruck_mate_header.jpg" alt="MYTRUCK MATE — le compagnon du routier">
+<div class="hero-actions"><button class="hero-icon" id="menuToggle" aria-label="Ouvrir le menu">☰</button><button class="hero-icon" id="notificationsBtn" aria-label="Notifications">♧</button></div>
+<div class="banner-greeting"></div>
 </header>
 
 <main class="wrap">
@@ -566,36 +605,35 @@ body{padding-bottom:calc(72px + env(safe-area-inset-bottom))!important}
   </section>
 
   <section id="appSection" class="hidden">
-    <div class="section-title dashboard-heading">Mon tableau de bord</div>
-    <div class="stats">
-      <div class="stat stat-fees"><div class="stat-icon">€</div><div class="stat-content"><div class="stat-label">MES FRAIS DU MOIS</div><div class="stat-value" id="homeFeesValue">— €</div><div class="stat-foot">Total de mes indemnités</div></div></div>
-      <div class="stat stat-days"><div class="stat-icon">✓</div><div class="stat-content"><div class="stat-label">JOURNÉES SAISIES</div><div class="stat-value" id="homeDaysValue">0</div><div class="stat-foot" id="homeFeesDays">Ce mois-ci</div></div></div>
-      <div class="stat stat-space"><div class="stat-icon">♙</div><div class="stat-content"><div class="stat-label">MON ESPACE</div><div class="stat-value">Chauffeur</div><div class="stat-foot"><span class="active-dot"></span> Compte actif</div></div></div>
-    </div>
-    <div class="tools-heading"><span>»</span><strong>Mes fonctionnalités</strong><i></i></div>
-    <div class="grid">
-      <a class="tile tile-day" aria-label="Ma journée, ouvrir la saisie de journée" href="ma_journee.html"><b>Ma journée</b><span>Saisir horaires, transports et kilomètres</span></a>
-      <a class="tile tile-week" href="feuille.html"><div class="ico"><svg viewBox="0 0 100 90" aria-hidden="true"><use href="assets/3d/dashboard-icons.svg#week"></use></svg></div><b>Ma feuille de semaine</b><span>Consulter et imprimer mon suivi</span></a>
-      <a class="tile tile-fees" href="frais.html"><div class="ico"><svg viewBox="0 0 100 90" aria-hidden="true"><use href="assets/3d/dashboard-icons.svg#fees"></use></svg></div><b>Mes frais</b><span>Indemnités et récapitulatif mensuel</span></a>
-      <a class="tile tile-recap" href="recapitulatif.html" aria-label="Mon récapitulatif, statistiques de mon activité"></a>
-      <a class="tile tile-history" href="historique.html"><div class="ico"><svg viewBox="0 0 100 90" aria-hidden="true"><use href="assets/3d/dashboard-icons.svg#history"></use></svg></div><b>Mon historique</b><span>Retrouver mes journées par période</span></a>
-      <a class="tile tile-profile" href="profil.html"><div class="ico"><svg viewBox="0 0 100 90" aria-hidden="true"><use href="assets/3d/dashboard-icons.svg#profile"></use></svg></div><b>Mon profil</b><span>Mes informations personnelles</span></a>
-    </div>
-    <div class="accountbar accountbar-bottom">
-      <div class="account-identity"><div class="account-avatar">♙</div><div><strong id="accountName">Espace chauffeur</strong><div id="accountEmail" class="account-email"></div></div></div>
-      <a class="edit-profile" href="profil.html">⚙️ <span>Modifier mon profil</span></a>
-      <button class="btn logout-btn" id="logoutBtn" type="button">↪ <span>Déconnexion</span></button>
-      <span id="profileName" class="hidden">Profil chauffeur</span><span id="profileEmail" class="hidden">Profil à compléter</span>
-    </div>
-    <p class="notice">Tes journées sont enregistrées sur cet appareil et synchronisées avec ton compte en ligne lorsque tu es connecté. Les feuilles hebdomadaires restent pour le moment enregistrées localement sur cet appareil. Pense à exporter régulièrement tes documents.</p>
-  </section>
+<div id="homeView" class="home-view">
+<div class="profile-strip"><div class="avatar-truck">🚛</div><div class="profile-copy"><strong>Bonjour <span id="helloName">chauffeur</span> 👋</strong><small>Chauffeur poids lourd · MYTRUCK MATE</small></div><div class="status-pill">☁️<br><span id="homeCity">Bonne route</span></div></div>
+<a class="action-day" href="ma_journee.html"><span class="action-symbol">▣</span><span><strong>Ma journée</strong><small>Saisir mes transports</small></span><span class="chev">›</span></a>
+<div class="info-card" id="homePrimesCard"><div class="card-head"><span class="symbol">🪙</span><span>Mes primes <span class="prime-month" id="homeMonthLabel">— mois en cours</span></span><button class="card-arrow" id="openPrimes" aria-label="Voir mes primes">›</button></div><div class="prime-line"><strong class="prime-total" id="homeFeesValue">— €</strong><span class="prime-month" id="homePrimeDays">Indemnités cumulées</span></div></div>
+<div class="info-card" id="homeActivityCard"><div class="card-head"><span class="symbol">📊</span><span>Mon activité du mois</span><button class="card-arrow" id="openActivity" aria-label="Voir mon activité">›</button></div><div class="activity-grid"><div class="activity-item"><span class="activity-icon">🛣️</span><div class="activity-value" id="homeKmValue">0 km</div><div class="activity-label">Kilomètres</div></div><div class="activity-item"><span class="activity-icon">🚚</span><div class="activity-value" id="homeMissionsValue">0</div><div class="activity-label">Missions</div></div><div class="activity-item"><span class="activity-icon">▦</span><div class="activity-value" id="homeDaysValue">0</div><div class="activity-label">Jours</div></div></div></div>
+<div class="shortcut-grid" id="homeShortcuts"><a class="shortcut" href="feuille.html"><span class="ico">▦</span><span>Ma semaine</span></a><a class="shortcut" href="recapitulatif.html"><span class="ico">▥</span><span>Mes bilans</span></a><a class="shortcut" href="historique.html"><span class="ico">▤</span><span>Mon historique</span></a><a class="shortcut" href="profil.html"><span class="ico">⚙</span><span>Mon profil</span></a></div>
+<div class="customize-row"><button class="customize-btn" id="customizeToggle">⚙ Personnaliser mon accueil</button></div>
+<div class="custom-panel hidden" id="customPanel"><strong>Choisir les éléments affichés</strong><label><input type="checkbox" data-widget="primes" checked> Mes primes du mois</label><label><input type="checkbox" data-widget="activity" checked> Mon activité du mois</label><label><input type="checkbox" data-widget="shortcuts" checked> Mes raccourcis</label><button class="btn" id="saveHomePrefs" type="button">Enregistrer mon accueil</button><div class="status" id="customStatus"></div></div>
+</div>
+<div id="menuView" class="menu-view hidden"><div class="menu-title"><button class="hero-icon" id="backHome" aria-label="Retour à l'accueil">‹</button><span>▦ Toutes les fonctionnalités</span></div>
+<div class="menu-grid">
+<a class="menu-tile" href="ma_journee.html"><span class="ico">▣</span><strong>Ma journée</strong><small>Saisir mes transports</small></a>
+<a class="menu-tile" href="feuille.html"><span class="ico">▦</span><strong>Ma semaine</strong><small>Suivi hebdo</small></a>
+<a class="menu-tile" href="feuille.html"><span class="ico">▤</span><strong>Feuille semaine</strong><small>Imprimer / PDF</small></a>
+<a class="menu-tile" href="ma_journee.html"><span class="ico">🚛</span><strong>Suivi des transports</strong><small>Conteneurs, train, missions</small></a>
+<a class="menu-tile" href="recapitulatif.html"><span class="ico">▥</span><strong>Mes bilans</strong><small>Activité, kilomètres</small></a>
+<a class="menu-tile" href="frais.html"><span class="ico">🪙</span><strong>Récapitulatif primes</strong><small>Mois / année</small></a>
+<a class="menu-tile disabled" href="#" data-coming="Mes documents"><span class="ico">▧</span><strong>Mes documents</strong><small>Bientôt disponible</small></a>
+<a class="menu-tile disabled" href="#" data-coming="Entretien camion"><span class="ico">🔧</span><strong>Entretien camion</strong><small>Suivi et rappels</small></a>
+<a class="menu-tile" href="historique.html"><span class="ico">▦</span><strong>Mon calendrier</strong><small>Jours travaillés</small></a>
+<a class="menu-tile disabled" href="#" data-coming="Services autour de moi"><span class="ico">⌖</span><strong>Services autour de moi</strong><small>Parkings, stations, relais</small></a>
+<a class="menu-tile" href="feuille.html"><span class="ico">⇧</span><strong>Sauvegarde / Export PDF</strong><small>Feuille et récapitulatifs</small></a>
+<a class="menu-tile disabled" href="#" data-coming="Support & Assistance"><span class="ico">✉</span><strong>Support & Assistance</strong><small>Contact et suggestions</small></a>
+</div><div class="menu-promo">✓ Suivez vos transports<br>✓ Gérez votre activité<br>✓ Retrouvez vos feuilles<br>✓ Simplifiez votre quotidien</div></div>
+<div class="accountbar accountbar-bottom"><div class="account-identity"><div class="account-avatar">🚛</div><div><strong id="accountName">Espace chauffeur</strong><div id="accountEmail" class="account-email"></div></div></div><a class="edit-profile" href="profil.html">⚙️ <span>Mon profil</span></a><button class="btn logout-btn" id="logoutBtn" type="button">↪ <span>Déconnexion</span></button><span id="profileName" class="hidden">Profil chauffeur</span><span id="profileEmail" class="hidden">Profil à compléter</span></div>
+<p class="notice">Tes journées sont enregistrées sur cet appareil et synchronisées avec ton compte en ligne lorsque tu es connecté. Les feuilles hebdomadaires restent pour le moment enregistrées localement sur cet appareil. Pense à exporter régulièrement tes documents.</p>
+</section></section>
   <div class="footer">MYTRUCK MATE · Le compagnon du chauffeur routier</div>
-  <nav class="bottom-nav" aria-label="Navigation principale">
-    <a class="active" href="index.html"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="m3 10 9-7 9 7v10a1 1 0 0 1-1 1h-5v-7h-6v7H4a1 1 0 0 1-1-1z"/></svg></span><span>Accueil</span></a>
-    <a href="ma_journee.html"><span><svg viewBox="0 0 24 24" aria-hidden="true"><rect x="4" y="3" width="16" height="18" rx="2"/><path d="M8 7h8M8 11h8M8 15h5"/></svg></span><span>Carnet</span></a>
-    <a href="historique.html"><span><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12a9 9 0 1 0 2.6-6.4L3 8"/><path d="M3 3v5h5M12 7v5l3 2"/></svg></span><span>Historique</span></a>
-    <a href="profil.html"><span><svg viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg></span><span>Compte</span></a>
-  </nav>
+  <nav class="bottom-nav" aria-label="Navigation principale"><a class="active" href="index.html"><span>⌂</span><span>Accueil</span></a><a href="ma_journee.html"><span>▣</span><span>Ma journée</span></a><a href="recapitulatif.html"><span>▥</span><span>Bilans</span></a><a href="profil.html"><span>⚙</span><span>Paramètres</span></a></nav>
 
 </main>
 
@@ -612,32 +650,25 @@ const appSection = $('appSection');
 let authMode = 'login';
 
 function updateHomeFees(entries) {
-  const now = new Date();
-  const ym = now.getFullYear() + '-' + String(now.getMonth()+1).padStart(2,'0');
-  let rates = {breakfast:8.87,lunch:16.36,dinner:16.36,night:52.31};
-  try { rates = {...rates,...JSON.parse(localStorage.getItem('truckpilote_fee_rates_v1')||'{}')}; } catch {}
-  const TRAIN_RATE = 30;
-  let total=0, days=0;
-  Object.entries(entries||{}).forEach(([date,e])=>{
-    if(!date.startsWith(ym)||!e||typeof e!=='object') return;
-    const meaningful=['tractor','start','end','drive','place','kmstart','kmend'].some(k=>String(e[k]??'').trim()!=='') ||
-      ['breakfast','lunch','dinner','night','train'].some(k=>e[k]===true) ||
-      (Array.isArray(e.transports)&&e.transports.some(t=>t&&Object.values(t).some(v=>String(v??'').trim()!=='')));
-    if(!meaningful)return;
-    days++;
-    const r=e.feeRates||rates;
-    if(e.breakfast===true) total+=Number(r.breakfast??rates.breakfast);
-    if(e.lunch===true) total+=Number(r.lunch??rates.lunch);
-    if(e.night===true) total+=Number(r.night??rates.night);
-    else if(e.dinner===true) total+=Number(r.dinner??rates.dinner);
-    if(e.train===true) total+=TRAIN_RATE;
-  });
-  const formatted=total.toLocaleString('fr-FR',{style:'currency',currency:'EUR'});
-  const value=document.getElementById('homeFeesValue'); if(value) value.textContent=formatted;
-  const count=document.getElementById('homeFeesDays'); if(count) count.textContent='Ce mois-ci';
-  const dayValue=document.getElementById('homeDaysValue'); if(dayValue) dayValue.textContent=String(days);
+ const now=new Date(),ym=now.getFullYear()+'-'+String(now.getMonth()+1).padStart(2,'0');
+ const monthLabel=now.toLocaleDateString('fr-FR',{month:'long',year:'numeric'});
+ const monthEl=document.getElementById('homeMonthLabel');if(monthEl)monthEl.textContent='— '+monthLabel;
+ let rates={breakfast:8.87,lunch:16.36,dinner:16.36,night:52.31};try{rates={...rates,...JSON.parse(localStorage.getItem('truckpilote_fee_rates_v1')||'{}')}}catch{}
+ let total=0,days=0,km=0,missions=0;
+ Object.entries(entries||{}).forEach(([date,e])=>{
+  if(!date.startsWith(ym)||!e||typeof e!=='object')return;
+  const meaningful=['tractor','start','end','drive','place','kmstart','kmend'].some(k=>String(e[k]??'').trim()!=='')||['breakfast','lunch','dinner','night','train'].some(k=>e[k]===true)||(Array.isArray(e.transports)&&e.transports.some(t=>t&&Object.values(t).some(v=>String(v??'').trim()!=='')));
+  if(!meaningful)return;days++;const r=e.feeRates||rates;
+  if(e.breakfast===true)total+=Number(r.breakfast??rates.breakfast);if(e.lunch===true)total+=Number(r.lunch??rates.lunch);if(e.night===true)total+=Number(r.night??rates.night);else if(e.dinner===true)total+=Number(r.dinner??rates.dinner);if(e.train===true)total+=30;
+  const start=Number(String(e.kmstart??e.kmStart??'').replace(',','.')),end=Number(String(e.kmend??e.kmEnd??'').replace(',','.'));if(Number.isFinite(start)&&Number.isFinite(end)&&end>=start)km+=end-start;
+  if(Array.isArray(e.transports))missions+=e.transports.filter(t=>t&&Object.values(t).some(v=>String(v??'').trim()!=='')).length;else if(e.client||e.place||e.transport)missions++;
+ });
+ const fee=document.getElementById('homeFeesValue');if(fee)fee.textContent=total.toLocaleString('fr-FR',{style:'currency',currency:'EUR'});
+ const dayEl=document.getElementById('homeDaysValue');if(dayEl)dayEl.textContent=String(days);
+ const primeDays=document.getElementById('homePrimeDays');if(primeDays)primeDays.textContent=days+' journée'+(days>1?'s':'')+' saisie'+(days>1?'s':'');
+ const kmEl=document.getElementById('homeKmValue');if(kmEl)kmEl.textContent=Math.round(km).toLocaleString('fr-FR')+' km';
+ const missionsEl=document.getElementById('homeMissionsValue');if(missionsEl)missionsEl.textContent=String(missions);
 }
-
 function localDailyEntries(){try{return JSON.parse(localStorage.getItem('truckpilote_daily_entries_v1')||'{}')}catch{return {}}}
 function showStatus(message, isError = false) {
   $('authStatus').textContent = message;
@@ -748,6 +779,21 @@ supabase.auth.onAuthStateChange((_event, sessionNow) => {
   if (sessionNow?.user) showSignedIn(sessionNow.user);
   else showSignedOut();
 });
+
+// Navigation accueil / menu et personnalisation par chauffeur
+const homeView=document.getElementById('homeView'),menuView=document.getElementById('menuView');
+document.getElementById('menuToggle')?.addEventListener('click',()=>{homeView.classList.add('hidden');menuView.classList.remove('hidden')});
+document.getElementById('backHome')?.addEventListener('click',()=>{menuView.classList.add('hidden');homeView.classList.remove('hidden')});
+document.getElementById('openPrimes')?.addEventListener('click',()=>location.href='frais.html');
+document.getElementById('openActivity')?.addEventListener('click',()=>location.href='recapitulatif.html');
+document.getElementById('notificationsBtn')?.addEventListener('click',()=>alert('Tu es à jour. Les notifications seront activées dans une prochaine évolution.'));
+document.querySelectorAll('[data-coming]').forEach(el=>el.addEventListener('click',e=>{e.preventDefault();alert(el.dataset.coming+' : fonctionnalité prévue dans une prochaine version.')}));
+const prefKey='mymate_home_widgets_v2';
+function applyHomePrefs(){let p={primes:true,activity:true,shortcuts:true};try{p={...p,...JSON.parse(localStorage.getItem(prefKey)||'{}')}}catch{};document.getElementById('homePrimesCard').classList.toggle('hidden',!p.primes);document.getElementById('homeActivityCard').classList.toggle('hidden',!p.activity);document.getElementById('homeShortcuts').classList.toggle('hidden',!p.shortcuts);document.querySelectorAll('#customPanel input[data-widget]').forEach(i=>i.checked=!!p[i.dataset.widget])}
+document.getElementById('customizeToggle')?.addEventListener('click',()=>document.getElementById('customPanel').classList.toggle('hidden'));
+document.getElementById('saveHomePrefs')?.addEventListener('click',()=>{const p={};document.querySelectorAll('#customPanel input[data-widget]').forEach(i=>p[i.dataset.widget]=i.checked);localStorage.setItem(prefKey,JSON.stringify(p));applyHomePrefs();document.getElementById('customStatus').textContent='Accueil personnalisé enregistré sur cet appareil.'});
+applyHomePrefs();
+
 if ('serviceWorker' in navigator) window.addEventListener('load', () => navigator.serviceWorker.register('./service-worker.js').catch(() => {}));
 </script>
 </body>
