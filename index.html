@@ -656,6 +656,7 @@ import { createClient } from 'https://cdn.jsdelivr.net/npm/@supabase/supabase-js
 const SUPABASE_URL = 'https://ahgdzxgowadoehqhlmqa.supabase.co';
 const SUPABASE_PUBLISHABLE_KEY = 'sb_publishable_Oja8VvG-iIv-mTKoz3Nicw_R9EnJG9P';
 const supabase = createClient(SUPABASE_URL, SUPABASE_PUBLISHABLE_KEY);
+supabase.from=()=>{throw new Error('Mode test V2 : données locales isolées de la version officielle')};
 
 const $ = id => document.getElementById(id);
 const authSection = $('authSection');
