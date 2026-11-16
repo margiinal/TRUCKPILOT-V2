@@ -1388,7 +1388,7 @@ header.top .hero-icon{pointer-events:auto!important}
   margin-top:-83px!important;
 }
 .avatar-truck{
-  background-image:url("assets/3d/mytruck-mate-bandeau-quatre-camions.jpg")!important;
+  background-image:url("assets/3d/home-header-reference.webp")!important;
   background-size:auto 210%!important;
   background-position:39% 52%!important;
   background-repeat:no-repeat!important;
@@ -1452,6 +1452,32 @@ header.top .hero-actions{z-index:6!important}
   header.top{height:clamp(230px,67vw,285px)!important}
   header.top > img.banner-image{
     object-position:58% 52%!important;
+  }
+}
+
+
+
+/* AVATAR ACCUEIL — même Scania que le bandeau */
+.avatar-truck{
+  background-image:url("assets/3d/home-header-reference.webp")!important;
+  background-size:auto 245%!important;
+  background-position:86% 53%!important;
+  background-repeat:no-repeat!important;
+  background-color:#09243a!important;
+  border:2px solid #38caff!important;
+  box-shadow:0 0 13px #00aaff66!important;
+}
+/* Logo un peu plus présent sur grand écran */
+@media(min-width:700px){
+  header.top .hero-brand .brand-truck{
+    width:clamp(76px,6vw,96px)!important;
+    height:clamp(42px,3.5vw,54px)!important;
+  }
+  header.top .hero-brand strong{
+    font-size:clamp(28px,2.5vw,38px)!important;
+  }
+  header.top .hero-brand small{
+    font-size:clamp(11px,.95vw,14px)!important;
   }
 }
 
